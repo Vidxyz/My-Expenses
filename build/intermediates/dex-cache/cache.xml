@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Vidhyasagar\AndroidStudioProjects\MyExpenses\MyExpenses\build\intermediates\exploded-aar\com.gordonwong\material-sheet-fab\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="34fc70f7f1d882154d876ea763f05977d9945699">
+        <dex dex="C:\Users\Vidhyasagar\AndroidStudioProjects\MyExpenses\MyExpenses\build\intermediates\pre-dexed\debug\classes-0427c0237cf463da0ba303cc45f98cbbd06f6df9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vidhyasagar\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Vidhyasagar\AndroidStudioProjects\MyExpenses\MyExpenses\build\intermediates\pre-dexed\debug\library-2.4.0-8e47178d65966d1d950aee2c6d46dbf971788a68.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vidhyasagar\AndroidStudioProjects\MyExpenses\MyExpenses\build\intermediates\exploded-aar\com.github.asyl.animation\arcanimator\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
+        <dex dex="C:\Users\Vidhyasagar\AndroidStudioProjects\MyExpenses\MyExpenses\build\intermediates\pre-dexed\debug\classes-e3edf5d5e74bb0be1464404c8630cff0c06c1a7c.jar" />
+    </item>
+
+</items>

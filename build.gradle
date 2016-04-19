@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+        compile 'com.github.ozodrukh:CircularReveal:(latest-release)@aar'
+
+
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+ext {
+    compileSdkVersion = 22
+    buildToolsVersion = "23.0.1"
+
+    minSdkVersion = 14
+    targetSdkVersion = 23
+}

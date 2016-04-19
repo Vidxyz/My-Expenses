@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2015-present, Parse, LLC.
+  ~ All rights reserved.
+  ~
+  ~ This source code is licensed under the BSD-style license found in the
+  ~ LICENSE file in the root directory of this source tree. An additional grant
+  ~ of patent rights can be found in the PATENTS file in the same directory.
+  -->
+<resources>
+    <string name="parse_app_id">myexpenses273648347y9ehfouwh977349rh</string>
+    <string name="parse_client_key">ksjfgh387728fyg7s0bf682tf8e76gyds</string>
+
+    <string name="app_name">My Expenses</string>
+
+    <string name="hello_world">Hello World!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+
+
+    <string name="all">All</string>
+    <string name="createnote">Create note</string>
+    <string name="closedrawer">Close drawer</string>
+    <string name="favorites">Favorites</string>
+    <string name="notes">Notes</string>
+    <string name="opendrawer">Open drawer</string>
+    <string name="photo">Photo</string>
+    <string name="recording">Recording</string>
+    <string name="refresh">Refresh</string>
+    <string name="reminder">Reminder</string>
+    <string name="search">Search</string>
+    <string name="shared">Shared</string>
+    <string name="sheet_item_pressed">Item pressed</string>
+    <string name="snackbar_shared_msg">Gordon Wong shared a note with you.</string>
+    <string name="view">View</string>
+</resources>
