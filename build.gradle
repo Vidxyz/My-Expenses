@@ -8,7 +8,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-        compile 'com.github.ozodrukh:CircularReveal:(latest-release)@aar'
 
 
     }
@@ -21,9 +20,9 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion = 22
+    compileSdkVersion = 23
     buildToolsVersion = "23.0.1"
 
-    minSdkVersion = 14
+    minSdkVersion = 16 
     targetSdkVersion = 23
 }
