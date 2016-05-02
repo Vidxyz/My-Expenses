@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Spending">
+        <menu>
+            <item android:title="Dashboard"
+                android:id="@+id/nav_item_dashboard"
+                android:icon="@drawable/ic_dashboard"/>
+
+            <item android:title="Diary"
+                android:id="@+id/nav_item_diary"
+                android:icon="@drawable/ic_delete"/>
+
+            <item android:title="Calendar"
+                android:id="@+id/nav_item_calendar"
+                android:icon="@drawable/ic_calendar"/>
+
+            <item android:title="Progress"
+                android:id="@+id/nav_item_progress"
+                android:icon="@drawable/ic_calendar"/>
+        </menu>
+    </item>
+
+
+    <item android:title="Personalization">
+        <menu>
+            <item
+                android:title="Profile"
+                android:icon="@drawable/ic_profile"/>
+
+            <item android:title="Settings"
+                android:icon="@android:drawable/ic_delete"/>
+
+            <item android:title="Help"
+                android:icon="@android:drawable/ic_lock_power_off"/>
+
+        </menu>
+    </item>
+
+</menu>

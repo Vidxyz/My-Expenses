@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\stripe3_close.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\stripe3_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\stripe1_open.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\stripe1_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\stripe2_close.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\stripe2_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\stripe3_open.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\stripe3_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\stripe2_open.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\stripe2_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\stripe1_close.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\stripe1_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\animator\\rotation.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\animator\\rotation.xml"
+    }
+]

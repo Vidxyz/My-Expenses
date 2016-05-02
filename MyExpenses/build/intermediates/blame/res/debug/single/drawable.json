@@ -1,0 +1,294 @@
+[
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_selector_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_selector_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\next_button.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\next_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_play_to_pause.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_play_to_pause.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_stop_vector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_stop_vector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_item_selected.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_item_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_btn_selector_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_btn_selector_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_drawer_vector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_drawer_vector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_to_drawer.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_arrow_to_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_dashboard.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_dashboard.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_event_white_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_event_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_close_animated.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\drawable\\icon_close_animated.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_btn_selector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_btn_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\fab_background.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\drawable\\fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_debit.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_debit.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_mic_grey600_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_mic_grey600_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_calendar.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_calendar.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_food.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_food.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\splashscreen.jpg",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\splashscreen.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_search_white_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_search_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_btn_selected_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_btn_selected_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_create_grey600_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_create_grey600_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_access_alarms_grey600_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_access_alarms_grey600_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_add_grey600_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_add_grey600_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_btn_selected.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_btn_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_vector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_arrow_vector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\snackbar_background.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\drawable\\snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_pause_vector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_pause_vector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_profile.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_profile.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_stop_to_play.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_stop_to_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_delete.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_delete.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_edit.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_edit.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_transparent.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_transparent.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_animated.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\drawable\\icon_animated.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_pause_to_play.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_pause_to_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_drawer_to_arrow.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_drawer_to_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_location.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_location.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\drawable\\icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_place_white_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_place_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.2.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_play_vector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_play_vector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.2.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_photo_camera_grey600_24dp.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\ic_photo_camera_grey600_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\previous_button.png",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\drawable\\previous_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_close.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.michaldrabik\\tapbarmenu\\1.0.5\\res\\drawable\\icon_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_selector.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_play_to_stop.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.wnafee\\vector-compat\\1.0.5\\res\\drawable\\ic_play_to_stop.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable\\md_item_selected_dark.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable\\md_item_selected_dark.xml"
+    }
+]

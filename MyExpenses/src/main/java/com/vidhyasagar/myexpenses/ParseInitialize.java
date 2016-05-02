@@ -37,22 +37,22 @@ public class ParseInitialize extends Application {
     .build()
     );
 
-      ParseObject gameScore = new ParseObject("GameScore");
-      gameScore.put("score", 1337);
-      gameScore.put("playerName", "Sean Plott");
-      gameScore.put("cheatMode", false);
-      gameScore.saveInBackground(new SaveCallback() {
-          public void done(ParseException e) {
-              if (e == null) {
-                  Log.i("Parse", "Save Succeeded");
-              } else {
-                  Log.i("Parse", "Save Failed");
-              }
-          }
-      });
-
-      ParseInstallation.getCurrentInstallation().put("username", "vidhyasagar");
-      ParseInstallation.getCurrentInstallation().saveInBackground();
+//      ParseObject gameScore = new ParseObject("GameScore");
+//      gameScore.put("score", 1337);
+//      gameScore.put("playerName", "Sean Plott");
+//      gameScore.put("cheatMode", false);
+//      gameScore.saveInBackground(new SaveCallback() {
+//          public void done(ParseException e) {
+//              if (e == null) {
+//                  Log.i("Parse", "Save Succeeded");
+//              } else {
+//                  Log.i("Parse", "Save Failed");
+//              }
+//          }
+//      });
+//
+//      ParseInstallation.getCurrentInstallation().put("username", "vidhyasagar");
+//      ParseInstallation.getCurrentInstallation().saveInBackground();
 
 //      ParseUser.enableAutomaticUser();
     ParseACL defaultACL = new ParseACL();

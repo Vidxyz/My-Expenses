@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2015-present, Parse, LLC.
-  ~ All rights reserved.
-  ~
-  ~ This source code is licensed under the BSD-style license found in the
-  ~ LICENSE file in the root directory of this source tree. An additional grant
-  ~ of patent rights can be found in the PATENTS file in the same directory.
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="parse_app_id">myexpenses273648347y9ehfouwh977349rh</string>
     <string name="parse_client_key">ksjfgh387728fyg7s0bf682tf8e76gyds</string>
 
-    <string name="app_name">My Expenses</string>
+    <string name="app_name">My expenses</string>
+    <string name="fragment_dashboard">My Dashboard</string>
+    <string name="fragment_diary">My Diary</string>
 
     <string name="hello_world">Hello World!</string>
     <string name="action_settings">Settings</string>
@@ -31,8 +26,24 @@
     <string name="search">Search</string>
     <string name="shared">Shared</string>
     <string name="sheet_item_pressed">Item pressed</string>
-    <string name="snackbar_shared_msg">Gordon Wong shared a note with you.</string>
     <string name="view">View</string>
     <string name="title_activity_login_screen">LoginScreen</string>
+
+    <string-array name="expense_categories">
+        <item>Food</item>
+        <item>Groceries</item>
+        <item>Movies</item>
+        <item>Alcohol</item>
+        <item>Rent</item>
+        <item>Power</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="expense_types">
+        <item>Debit</item>
+        <item>Cash</item>
+        <item>Credit</item>
+        <item>Other</item>
+    </string-array>
 
 </resources>

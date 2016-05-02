@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:weightSum="10" android:id="@+id/linearLayout"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:id="@+id/expenseAmountTextView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1.0"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_marginTop="-10dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="35sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLength="5"
+            android:ems="10"
+            android:layout_weight="2"
+            android:id="@+id/expenseAmount"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp" />
+
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/previousButton"
+            android:src="@drawable/previous_button"
+            android:layout_toLeftOf="@+id/todaysDate"
+            android:layout_toStartOf="@+id/todaysDate"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="10dp" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/nextButton"
+            android:src="@drawable/next_button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today&apos;s date"
+            android:id="@+id/todaysDate"
+            android:layout_alignBottom="@+id/nextButton"
+            android:layout_centerHorizontal="true"
+            android:textIsSelectable="true"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancelButton"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/saveButton"
+            android:layout_weight="1.0" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

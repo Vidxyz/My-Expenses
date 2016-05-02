@@ -86,9 +86,10 @@
             android:value="id:580127541868" />
 
         <activity
-            android:name="com.vidhyasagar.myexpenses.Dashboard"
+            android:name="com.vidhyasagar.myexpenses.MainActivity"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.vidhyasagar.myexpenses.LoginScreen"
             android:label="@string/title_activity_login_screen"

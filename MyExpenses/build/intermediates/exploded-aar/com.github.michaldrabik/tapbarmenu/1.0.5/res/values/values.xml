@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#e55452</color>
+    <declare-styleable name="TapBarMenu"><attr format="color" name="tbm_backgroundColor"/><attr format="dimension" name="tbm_buttonSize"/><attr format="dimension" name="tbm_buttonMarginRight"/><attr format="dimension" name="tbm_buttonMarginLeft"/><attr format="reference" name="tbm_iconClosed"/><attr format="reference" name="tbm_iconOpened"/><attr format="enum" name="tbm_buttonPosition"><enum name="left" value="0"/><enum name="center" value="1"/><enum name="right" value="2"/></attr><attr format="enum" name="tbm_menuAnchor"><enum name="bottom" value="3"/><enum name="top" value="4"/></attr><attr format="boolean" name="tbm_showItems"/></declare-styleable>
+    <dimen name="defaultButtonSize">56dp</dimen>
+    <integer name="animationDuration">250</integer>
+    <string name="app_name">TapBarMenu</string>
+</resources>

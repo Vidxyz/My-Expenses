@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="tapbarmenu-1.0.5">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/MyExpenses/build/intermediates/exploded-aar/com.github.michaldrabik/tapbarmenu/1.0.5/res" />
+      <root url="jar://$PROJECT_DIR$/MyExpenses/build/intermediates/exploded-aar/com.github.michaldrabik/tapbarmenu/1.0.5/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.michaldrabik/tapbarmenu/1.0.5/b2f6cd726cba71841475f03f0448dff46a8682bf/tapbarmenu-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
