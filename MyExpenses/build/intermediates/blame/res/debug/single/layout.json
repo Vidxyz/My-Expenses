@@ -64,10 +64,6 @@
         "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\layout\\layout_expense_form_2.xml",
-        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\layout\\layout_expense_form_2.xml"
-    },
-    {
         "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
@@ -142,10 +138,6 @@
     {
         "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
         "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
-        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\layout\\layout_expense_form_1.xml",
-        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\src\\main\\res\\layout\\layout_expense_form_1.xml"
     },
     {
         "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_view.xml",

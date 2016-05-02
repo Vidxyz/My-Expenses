@@ -19,12 +19,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import org.w3c.dom.Text;
@@ -40,11 +42,13 @@ public class ExpenseFragment extends Fragment {
 
     Calendar c;
     TextView todaysDate;
-    ListView listView;
-    IncomeListAdapter adapter;
-    ArrayList<String> options;
     Button cancelButton;
     Button saveButton;
+    Spinner categorySpinner;
+    Spinner methodSpinner;
+
+    ArrayAdapter<CharSequence> categoryAdapter;
+    ArrayAdapter<CharSequence> methodAdapter;
 
     //Variables to save an expense
     String expAmount;
@@ -91,6 +95,7 @@ public class ExpenseFragment extends Fragment {
             }
         });
 
+        //KeyBoard Disablers
         LinearLayout linearLayout = (LinearLayout) x.findViewById(R.id.linearLayout);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,8 +118,24 @@ public class ExpenseFragment extends Fragment {
         });
 
 
+        final EditText location = (EditText) x.findViewById(R.id.locationEditText);
+        location.setSingleLine(true);
+        location.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    disableKeyboard(x);
+                }
+                return false;
+            }
+        });
+
+        //Date stuff
         todaysDate = (TextView) x.findViewById(R.id.todaysDate);
         c = Calendar.getInstance();
+
+        //Form time format later on when the save button is clicked
+        final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
@@ -137,16 +158,17 @@ public class ExpenseFragment extends Fragment {
             }
         });
 
-        options = new ArrayList<>();
-        options.add("Expense Location");
-        options.add("Expense Category");
-        options.add("Expense Type");
 
-        listView = (ListView) x.findViewById(R.id.listView);
-        adapter = new IncomeListAdapter(getActivity(), R.layout.layout_expense_form_1, options);
-        listView.setAdapter(adapter);
+        //Main Form
+        categorySpinner = (Spinner) x.findViewById(R.id.categorySpinner);
+        methodSpinner = (Spinner) x.findViewById(R.id.methodSpinner);
 
-        expLocation = ((EditText) x.findViewById(R.id.expenseLocation)).getText().toString();
+        categoryAdapter = ArrayAdapter.createFromResource(getContext(), R.array.expense_categories, android.R.layout.simple_spinner_dropdown_item);
+        methodAdapter = ArrayAdapter.createFromResource(getContext(), R.array.expense_types, android.R.layout.simple_spinner_dropdown_item);
+
+        categorySpinner.setAdapter(categoryAdapter);
+        methodSpinner.setAdapter(methodAdapter);
+
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,18 +176,19 @@ public class ExpenseFragment extends Fragment {
                 //Save objects now
                 expAmount = amount.getText().toString();
 
-//                Log.i("applog", "Amount : " + expAmount);
-//                Log.i("applog", "Location : " + adapter.getItem(0));
-//                Log.i("applog", "Type : " + adapter.getItem(1));
-//                Log.i("applog", "Method : " + adapter.getItem(2));
-//                Log.i("applog", "Time : " + c.getTime());
+                Log.i("applog", "Amount : " + expAmount);
+                Log.i("applog", "Location : " + location.getText().toString());
+                Log.i("applog", "Type : " + categorySpinner.getSelectedItem().toString());
+                Log.i("applog", "Method : " + methodSpinner.getSelectedItem().toString());
+                Log.i("applog", "Time : " + timeFormat.format(c.getTime()));
 //
                 ParseObject newExpense = new ParseObject("Expenses");
-//                newExpense.put("amount", Float.parseFloat(expAmount));
-//                newExpense.put("time", c.getTime());
-//                newExpense.p ut("category", adapter.getItem(1));
-//                newExpense.put("method", adapter.getItem(2));
-//                newExpense.put("location", expLocation);
+                newExpense.put("amount", Float.parseFloat(expAmount));
+                newExpense.put("time", c.getTime());
+                newExpense.put("category", categorySpinner.getSelectedItem().toString());
+                newExpense.put("method", methodSpinner.getSelectedItem().toString());
+                newExpense.put("location", location.getText().toString());
+                newExpense.put("username", ParseUser.getCurrentUser().getUsername());
 
                 newExpense.saveInBackground(new SaveCallback() {
                     @Override

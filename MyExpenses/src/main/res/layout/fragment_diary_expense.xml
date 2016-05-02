@@ -84,11 +84,212 @@
 
     </RelativeLayout>
 
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="210dp"
-        android:id="@+id/listView"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/form"
+        android:layout_gravity="center_horizontal">
+
+        <!--Expense Layout-->
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:id="@+id/locationLayout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_location"
+                android:id="@+id/locationIcon"
+                android:layout_weight="2.00"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Expense Location"
+                    android:layout_weight="3.0"
+                    android:id="@+id/locationText"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right">
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/locationEditText"
+                    android:layout_weight="1.00"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="right"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--Category Laout-->
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:id="@+id/categoryLayout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_food"
+                android:id="@+id/categoryIcon"
+                android:layout_weight="2.00"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Expense Category"
+                    android:layout_weight="3.0"
+                    android:id="@+id/categoryText"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right">
+
+                <Spinner
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/categorySpinner"
+                    android:layout_weight="1.00"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="right"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--Method Layout-->
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:id="@+id/methodLayout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_debit"
+                android:id="@+id/methodIcon"
+                android:layout_weight="2.00"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Expense Method"
+                    android:layout_weight="3.0"
+                    android:id="@+id/methodText"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginTop="7dp"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right">
+
+                <Spinner
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/methodSpinner"
+                    android:layout_weight="1.00"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="right"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
