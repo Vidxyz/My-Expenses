@@ -57,7 +57,6 @@ public class DailyViewFragment extends Fragment {
         final SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
 
         ParseQuery<ParseObject> query = new ParseQuery("Expenses");
-        Log.i("applog", "username " + ParseUser.getCurrentUser().getUsername());
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
 
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -66,10 +65,7 @@ public class DailyViewFragment extends Fragment {
                 for (ParseObject object : objects) {
                     String date = df.format(object.getDate("time"));
                     String currentDate = df.format(c.getTime());
-                    Log.i("applog", "Date received : " + date);
-                    Log.i("applog", "Date current : " + currentDate);
                     if (date.equals(dateToCompare)) {
-                        Log.i("applog", "adding to listview");
                         ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
                                 object.getString("location"), object.getString("time"), object.getString("category"), object.getString("method"));
                         expenses.add(temp);
@@ -156,9 +152,7 @@ public class DailyViewFragment extends Fragment {
 
     @Override
     public void onPause() {
-        Log.i("applog", "Being paused");
         super.onPause();
-        Log.i("applog", "Being paused");
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
         todaysDate.setText(formattedDate);

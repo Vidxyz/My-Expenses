@@ -6,13 +6,19 @@
         <item>Movies</item>
         <item>Alcohol</item>
         <item>Rent</item>
-        <item>Power</item>
+        <item>Hydro</item>
         <item>Other</item>
     </string-array>
     <string-array name="expense_types">
         <item>Debit</item>
         <item>Cash</item>
         <item>Credit</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="income_types">
+        <item>Salary</item>
+        <item>Investment</item>
+        <item>Loan</item>
         <item>Other</item>
     </string-array>
     <attr format="reference" name="drawerArrowStyle"/>

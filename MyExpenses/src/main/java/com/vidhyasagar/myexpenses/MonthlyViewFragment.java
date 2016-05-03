@@ -28,8 +28,17 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Vidhyasagar on 4/24/2016.
@@ -37,8 +46,13 @@ import java.util.ArrayList;
 public class MonthlyViewFragment extends Fragment {
 
     private String[] xData = { "Food", "Movies", "Women" };
+    private String[] categories = {"Food", "Groceries", "Rent", "Movies", "Alcohol", "Hydro", "Other"};
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    Calendar c;
+    ArrayList<Entry> breakdown;
+    HashMap<String, Float> categoryBreakdown;
+    PieChart chart;
 
     public void addToDiary(View v) {
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -47,12 +61,31 @@ public class MonthlyViewFragment extends Fragment {
         fragmentTransaction.replace(R.id.containerView,new DiaryFragment()).addToBackStack("monthly").commit();
     }
 
+    public void addToDictionary(String category, ParseObject object) {
+        if (categoryBreakdown.get(category) != null) {
+            categoryBreakdown.put(category, categoryBreakdown.get(category) + Float.parseFloat(object.getNumber("amount").toString()));
+        } else {
+            categoryBreakdown.put(category, Float.parseFloat(object.getNumber("amount").toString()));
+        }
+    }
+
+    public void cleanUpCategories() {
+        for(String category : categories) {
+            if(categoryBreakdown.get(category) == null) {
+                categoryBreakdown.put(category, 0f);
+                Log.i("applog", "Cleaned " + category);
+            }
+        }
+    }
+
     public void setUpChartOverview() {
-        PieChart chart = (PieChart) getView().findViewById(R.id.chart);
+        chart = (PieChart) getView().findViewById(R.id.chart);
         chart.setBackgroundColor(Color.TRANSPARENT);
         chart.setUsePercentValues(true);
         chart.setDescription("");
         chart.setHoleRadius(2.0f);
+        chart.setTransparentCircleRadius(1f);
+//        chart.setDrawSliceText(true);
         chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
 
             @Override
@@ -82,30 +115,94 @@ public class MonthlyViewFragment extends Fragment {
         l.setYEntrySpace(5f); // set the space between the legend entries on the y-axis
         l.setWordWrapEnabled(true);
 
-        ArrayList<Entry> breakdown = new ArrayList<Entry>();
-
-        Entry c1e1 = new Entry(23.000f, 0); // 0 == quarter 1
-        breakdown.add(c1e1);
-        Entry c1e2 = new Entry(50.000f, 1); // 1 == quarter 2 ...
-        breakdown.add(c1e2);
-        Entry c1e3 = new Entry(27.0f, 2);
-        breakdown.add(c1e3);
+        breakdown = new ArrayList<Entry>();
+        categoryBreakdown = new HashMap<>();
 
 
-        PieDataSet setBreakdown = new PieDataSet(breakdown, "Breakdown");
-        setBreakdown.setAxisDependency(YAxis.AxisDependency.LEFT);
-        setBreakdown.setSliceSpace(5f);
-        setBreakdown.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        //Must populuate the breakdown arraylist with query results
+        final SimpleDateFormat format = new SimpleDateFormat("MMM-yyyy");
+        final String currentMonth = format.format(c.getTime());
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Expenses");
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
 
-        ArrayList<String> xVals = new ArrayList<String>();
-        xVals.add("Movies");
-        xVals.add("Groceries");
-        xVals.add("Food");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e != null) {
+                    e.printStackTrace();
+                } else {
+                    float totalExpenses = 0;
+                    for (ParseObject object : objects) {
+                        if (currentMonth.equals(format.format(object.getDate("time")))) {
+                            //these objects are this months expenses now
+                            totalExpenses = totalExpenses + Float.parseFloat(object.getNumber("amount").toString());
+                            String objCategory = object.getString("category");
+                            if (objCategory.equals("Food")) {
+                                addToDictionary("Food", object);
 
-        PieData data = new PieData(xVals, setBreakdown);
-        data.setValueFormatter(new PercentFormatter());
-        chart.setData(data);
-        chart.invalidate(); // refresh
+                            } else if (objCategory.equals("Groceries")) {
+                               addToDictionary("Groceries", object);
+                            }
+                            else if(objCategory.equals("Other")) {
+                                addToDictionary("Other", object);
+                            }
+                            else if(objCategory.equals("Rent")) {
+                                addToDictionary("Rent", object);
+                            }
+                            else if(objCategory.equals("Alcohol")) {
+                                addToDictionary("Alcohol", object);
+                            }
+                            else if(objCategory.equals("Movies")) {
+                                addToDictionary("Movies", object);
+                            }
+                            else if(objCategory.equals("Hydro")) {
+                                addToDictionary("Hydro", object);
+                            }
+                        }
+                    }
+
+                    cleanUpCategories();
+
+                    Entry food = new Entry(((categoryBreakdown.get("Food")/totalExpenses) * 100), 0); // 0 == quarter 1
+                    breakdown.add(food);
+                    Entry groceries = new Entry(((categoryBreakdown.get("Groceries")/totalExpenses) * 100), 1); // 0 == quarter 1
+                    breakdown.add(groceries);
+                    Entry other = new Entry(((categoryBreakdown.get("Other")/totalExpenses) * 100), 2); // 0 == quarter 1
+                    breakdown.add(other);
+                    Entry rent = new Entry(((categoryBreakdown.get("Rent")/totalExpenses) * 100), 3); // 0 == quarter 1
+                    breakdown.add(rent);
+                    Entry movies = new Entry(((categoryBreakdown.get("Movies")/totalExpenses) * 100), 4); // 0 == quarter 1
+                    breakdown.add(movies);
+                    Entry alcohol = new Entry(((categoryBreakdown.get("Alcohol")/totalExpenses) * 100), 5); // 0 == quarter 1
+                    breakdown.add(alcohol);
+                    Entry hydro = new Entry(((categoryBreakdown.get("Hydro")/totalExpenses) * 100), 6); // 0 == quarter 1
+                    breakdown.add(hydro);
+
+
+                    PieDataSet setBreakdown = new PieDataSet(breakdown, "");
+                    setBreakdown.setAxisDependency(YAxis.AxisDependency.LEFT);
+                    setBreakdown.setSliceSpace(5f);
+                    setBreakdown.setColors(ColorTemplate.VORDIPLOM_COLORS);
+
+                    ArrayList<String> xVals = new ArrayList<String>();
+                    xVals.add("Food");
+                    xVals.add("Groceries");
+                    xVals.add("Other");
+                    xVals.add("Rent");
+                    xVals.add("Movies");
+                    xVals.add("Alcohol");
+                    xVals.add("Hydro");
+//
+                    PieData data = new PieData(xVals, setBreakdown);
+                    data.setValueFormatter(new PercentFormatter());
+                    data.setValueTextSize(15f);
+                    chart.setData(data);
+                    chart.invalidate(); // refresh
+                }
+            }
+        });
+
+
     }
 
 
@@ -113,13 +210,13 @@ public class MonthlyViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentManager = getActivity().getSupportFragmentManager();
+        c = Calendar.getInstance();
         View x = inflater.inflate(R.layout.fragment_monthly_view,null);
         FloatingActionButton fab = (FloatingActionButton) x.findViewById(R.id.addDiaryButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addToDiary(v);
-                Log.i("applog", "This button pressed");
             }
         });
         return x;
@@ -128,7 +225,6 @@ public class MonthlyViewFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.i("applog", "This previous button pressed");
         setUpChartOverview();
 
 

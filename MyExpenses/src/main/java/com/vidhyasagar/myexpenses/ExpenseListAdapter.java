@@ -31,12 +31,6 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
 
         ImageView editButton = (ImageView) view.findViewById(R.id.listEditButton);
         editButton.setClickable(true);
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("applog", "edit pressed");
-            }
-        });
     }
 
 
@@ -47,7 +41,6 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("applog", "delete pressed");
                 DailyViewFragment.expenses.remove(position);
                 notifyDataSetChanged();
             }

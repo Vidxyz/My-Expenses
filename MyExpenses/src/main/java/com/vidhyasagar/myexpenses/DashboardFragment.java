@@ -56,8 +56,8 @@ public class DashboardFragment extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : Log.i("applog", "switch0") ; return new DailyViewFragment();
-                case 1 : Log.i("applog", "switch1") ;return new MonthlyViewFragment();
+                case 0 : return new DailyViewFragment();
+                case 1 : return new MonthlyViewFragment();
             }
             return null;
         }

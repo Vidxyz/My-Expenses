@@ -1,13 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:weightSum="10" android:id="@+id/linearLayout"
+    android:layout_height="wrap_content">
 
-    <RadioButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New RadioButton"
-        android:id="@+id/radioButton"
+        android:text="Amount"
+        android:id="@+id/expenseAmountTextView"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp" />
+        android:layout_weight="1.0"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_marginTop="-10dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="35sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLength="5"
+            android:ems="10"
+            android:layout_weight="2"
+            android:id="@+id/expenseAmount"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/previousButton"
+            android:src="@drawable/previous_button"
+            android:layout_toLeftOf="@+id/todaysDate"
+            android:layout_toStartOf="@+id/todaysDate"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="10dp" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/nextButton"
+            android:src="@drawable/next_button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today&apos;s date"
+            android:id="@+id/todaysDate"
+            android:layout_alignBottom="@+id/nextButton"
+            android:layout_centerHorizontal="true"
+            android:textIsSelectable="true"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="210dp"
+        android:id="@+id/form"
+        android:layout_gravity="center_horizontal">
+
+        <!--Expense Layout-->
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:id="@+id/locationLayout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_location"
+                android:id="@+id/locationIcon"
+                android:layout_weight="2.00"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Payer"
+                    android:layout_weight="3.0"
+                    android:id="@+id/locationText"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right">
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/locationEditText"
+                    android:layout_weight="1.00"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="right"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--Category Laout-->
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:id="@+id/categoryLayout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_food"
+                android:id="@+id/categoryIcon"
+                android:layout_weight="2.00"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:layout_weight="3.0"
+                    android:id="@+id/categoryText"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right">
+
+                <Spinner
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/categorySpinner"
+                    android:layout_weight="1.00"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="right"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--Method Layout-->
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:id="@+id/methodLayout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_debit"
+                android:id="@+id/methodIcon"
+                android:layout_weight="2.00"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+                    android:layout_weight="3.0"
+                    android:id="@+id/methodText"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginTop="7dp"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_weight="3.00"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="right">
+
+                <Spinner
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/methodSpinner"
+                    android:layout_weight="1.00"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="right"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancelButton"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/saveButton"
+            android:layout_weight="1.0" />
+
+    </LinearLayout>
+
+
+
+
 </LinearLayout>
