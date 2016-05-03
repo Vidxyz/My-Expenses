@@ -10,13 +10,13 @@ public class ExpenseListItem {
     public String expenseTime;
     public String expenseType;
     public String expenseIcon;
-    public int expenseAmount;
+    public float expenseAmount;
 
     public ExpenseListItem(){
         super();
     }
 
-    public ExpenseListItem(int expenseAmount, String expenseLocation, String expenseTime, String expenseIcon, String expenseType) {
+    public ExpenseListItem(float expenseAmount, String expenseLocation, String expenseTime, String expenseIcon, String expenseType) {
         super();
         this.expenseAmount = expenseAmount;
         this.expenseLocation = expenseLocation;

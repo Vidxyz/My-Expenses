@@ -46,16 +46,10 @@ public class ExpenseFragment extends Fragment {
     Button saveButton;
     Spinner categorySpinner;
     Spinner methodSpinner;
-
     ArrayAdapter<CharSequence> categoryAdapter;
     ArrayAdapter<CharSequence> methodAdapter;
 
-    //Variables to save an expense
     String expAmount;
-    String expLocation;
-    String expTime;
-    String expType;
-    String expMethod;
 
     public void disableKeyboard(View view) {
         InputMethodManager im = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);

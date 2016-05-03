@@ -18,10 +18,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.swipe.SwipeLayout;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,23 +51,35 @@ public class DailyViewFragment extends Fragment {
         fragmentTransaction.replace(R.id.containerView,new DiaryFragment()).addToBackStack("daily").commit();
     }
 
-    public void setUpExpensesListView() {
+    public void setUpExpensesListView(final String dateToCompare) {
 
-        expenses = new ArrayList<>();
+        expenses.clear();
+        final SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
 
-        ExpenseListItem item1 = new ExpenseListItem(56, "Famoso", "3:28pm", "Food", "Cash");
-        ExpenseListItem item2 = new ExpenseListItem(56, "Mozys", "6:28pm", "Gas", "Debit");
+        ParseQuery<ParseObject> query = new ParseQuery("Expenses");
+        Log.i("applog", "username " + ParseUser.getCurrentUser().getUsername());
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
 
-        expenses.add(item1);
-        expenses.add(item2);
-        expenses.add(item1);
-        expenses.add(item2);
-        expenses.add(item1);
-        expenses.add(item2);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                for (ParseObject object : objects) {
+                    String date = df.format(object.getDate("time"));
+                    String currentDate = df.format(c.getTime());
+                    Log.i("applog", "Date received : " + date);
+                    Log.i("applog", "Date current : " + currentDate);
+                    if (date.equals(dateToCompare)) {
+                        Log.i("applog", "adding to listview");
+                        ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
+                                object.getString("location"), object.getString("time"), object.getString("category"), object.getString("method"));
+                        expenses.add(temp);
+                    }
+                }
+                expenseListAdapter.notifyDataSetChanged();
+            }
+        });
 
-        expensesList = (ListView) getActivity().findViewById(R.id.expensesList);
-        expenseListAdapter = new ExpenseListAdapter(getActivity(), R.layout.layout_list_swipe, expenses);
-        expensesList.setAdapter(expenseListAdapter);
+
     }
 
     public void previousDate(View view) {
@@ -70,6 +88,7 @@ public class DailyViewFragment extends Fragment {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
         todaysDate.setText(formattedDate);
+        setUpExpensesListView(formattedDate);
 
     }
 
@@ -79,6 +98,7 @@ public class DailyViewFragment extends Fragment {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
         todaysDate.setText(formattedDate);
+        setUpExpensesListView(formattedDate);
     }
 
 
@@ -118,14 +138,20 @@ public class DailyViewFragment extends Fragment {
             }
         });
 
+        //Adding to listview
+        expenses = new ArrayList<>();
         return x;
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
-        setUpExpensesListView();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(c.getTime());
+        expensesList = (ListView) getActivity().findViewById(R.id.expensesList);
+        expenseListAdapter = new ExpenseListAdapter(getActivity(), R.layout.layout_list_swipe, expenses);
+        expensesList.setAdapter(expenseListAdapter);
+        setUpExpensesListView(formattedDate);
     }
 
     @Override

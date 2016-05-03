@@ -90,7 +90,7 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
 
         // Populate the data into the template view using the data object
         expenseType.setText(item.expenseType);
-        expenseAmount.setText(Integer.toString(item.expenseAmount));
+        expenseAmount.setText(Float.toString(item.expenseAmount));
         expenseLocation.setText(item.expenseLocation);
         expenseTime.setText(item.expenseTime);
 

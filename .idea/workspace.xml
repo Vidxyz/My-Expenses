@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="applog" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -37,20 +36,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ExpenseFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExpenseFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1488178">
-              <caret line="182" column="75" selection-start-line="182" selection-start-column="75" selection-end-line="182" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2783#2982#0" expanded="true" />
-                <element signature="e#2981#2982#0" expanded="true" />
-                <element signature="e#4858#5007#0" expanded="true" />
-                <element signature="e#5006#5007#0" expanded="true" />
-                <element signature="e#5049#5194#0" expanded="true" />
-                <element signature="e#5193#5194#0" expanded="true" />
+                <element signature="e#6836#7331#0" expanded="true" />
+                <element signature="e#7330#7331#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DailyViewFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4255911">
+              <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
+              <folding>
+                <element signature="e#2127#3134#0" expanded="true" />
+                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="e#4814#4963#0" expanded="true" />
+                <element signature="e#4962#4963#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpenseListAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="92" column="47" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpenseListItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,7 +91,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6896552">
+            <state vertical-scroll-proportion="0.0">
               <caret line="273" column="47" selection-start-line="273" selection-start-column="47" selection-end-line="273" selection-end-column="47" />
               <folding />
             </state>
@@ -1714,7 +1744,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/SwipeListAdapter.java" />
-        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListItem.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_swipe.xml" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/IncomeFragment.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_diary_expense.xml" />
@@ -1730,12 +1759,13 @@
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_expense_form.xml" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_expense_form_2.xml" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MonthlyViewFragment.java" />
-        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_expense_form_1.xml" />
-        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListAdapter.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/IncomeListAdapter.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_expense.xml" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListItem.java" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListAdapter.java" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java" />
       </list>
     </option>
   </component>
@@ -1778,7 +1808,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1800,28 +1829,6 @@
               <option name="myItemId" value="MyExpenses-MyExpenses" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyExpenses" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyExpenses-MyExpenses" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1841,21 +1848,12 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyExpenses" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyExpenses-MyExpenses" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2051,15 +2049,14 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882413" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2226847" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2226847" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48844376" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2079,6 +2076,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2136,12 +2134,31 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2783#2982#0" expanded="true" />
-            <element signature="e#2981#2982#0" expanded="true" />
-            <element signature="e#4858#5007#0" expanded="true" />
-            <element signature="e#5006#5007#0" expanded="true" />
-            <element signature="e#5049#5194#0" expanded="true" />
-            <element signature="e#5193#5194#0" expanded="true" />
+            <element signature="e#6836#7331#0" expanded="true" />
+            <element signature="e#7330#7331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_expense.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="273" column="47" selection-start-line="273" selection-start-column="47" selection-end-line="273" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6836#7331#0" expanded="true" />
+            <element signature="e#7330#7331#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2150,7 +2167,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="78" selection-start-line="43" selection-start-column="78" selection-end-line="43" selection-end-column="78" />
-          <folding />
+          <folding>
+            <element signature="e#2127#3134#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#4814#4963#0" expanded="true" />
+            <element signature="e#4962#4963#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2158,7 +2180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2229,7 +2250,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="e#2127#3134#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#4814#4963#0" expanded="true" />
+            <element signature="e#4962#4963#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2253,7 +2279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2305,7 +2330,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="e#2127#3134#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#4814#4963#0" expanded="true" />
+            <element signature="e#4962#4963#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2329,7 +2359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2337,7 +2366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2381,14 +2409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.137931">
           <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2444,11 +2464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5169082">
           <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1204#1355#0" expanded="false" />
-            <element signature="e#1354#1355#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2478,7 +2493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3558776">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2486,23 +2500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="78" selection-start-line="43" selection-start-column="78" selection-end-line="43" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2948403">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2511,24 +2508,49 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6896552">
+        <state vertical-scroll-proportion="0.0">
           <caret line="273" column="47" selection-start-line="273" selection-start-column="47" selection-end-line="273" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="47" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1488178">
-          <caret line="182" column="75" selection-start-line="182" selection-start-column="75" selection-end-line="182" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2783#2982#0" expanded="true" />
-            <element signature="e#2981#2982#0" expanded="true" />
-            <element signature="e#4858#5007#0" expanded="true" />
-            <element signature="e#5006#5007#0" expanded="true" />
-            <element signature="e#5049#5194#0" expanded="true" />
-            <element signature="e#5193#5194#0" expanded="true" />
+            <element signature="e#6836#7331#0" expanded="true" />
+            <element signature="e#7330#7331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4255911">
+          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
+          <folding>
+            <element signature="e#2127#3134#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#4814#4963#0" expanded="true" />
+            <element signature="e#4962#4963#0" expanded="true" />
           </folding>
         </state>
       </provider>
