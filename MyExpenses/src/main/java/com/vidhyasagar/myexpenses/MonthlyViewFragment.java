@@ -1,6 +1,7 @@
 package com.vidhyasagar.myexpenses;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -45,8 +46,9 @@ import java.util.List;
  */
 public class MonthlyViewFragment extends Fragment {
 
+
     private String[] xData = { "Food", "Movies", "Women" };
-    private String[] categories = {"Food", "Groceries", "Rent", "Movies", "Alcohol", "Hydro", "Other"};
+    private String[] categories = {"Food", "Groceries", "Other", "Rent", "Movies", "Alcohol", "Hydro"};
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     Calendar c;
@@ -73,7 +75,6 @@ public class MonthlyViewFragment extends Fragment {
         for(String category : categories) {
             if(categoryBreakdown.get(category) == null) {
                 categoryBreakdown.put(category, 0f);
-                Log.i("applog", "Cleaned " + category);
             }
         }
     }
@@ -83,9 +84,11 @@ public class MonthlyViewFragment extends Fragment {
         chart.setBackgroundColor(Color.TRANSPARENT);
         chart.setUsePercentValues(true);
         chart.setDescription("");
-        chart.setHoleRadius(2.0f);
+        chart.setHoleRadius(50f);
         chart.setTransparentCircleRadius(1f);
-//        chart.setDrawSliceText(true);
+        chart.setDrawSliceText(true);
+        chart.setCenterText("Monthly Breakdown");
+        chart.setCenterTextSize(12f);
         chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
 
             @Override
@@ -105,8 +108,9 @@ public class MonthlyViewFragment extends Fragment {
         });
 
         Legend l = chart.getLegend();
-//        legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+//        l.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
         l.setFormSize(10f); // set the size of the legend forms/shapes
+        l.setEnabled(true);
         l.setForm(Legend.LegendForm.SQUARE); // set what type of form/shape should be used
         l.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
         l.setTextSize(12f);
@@ -114,6 +118,11 @@ public class MonthlyViewFragment extends Fragment {
         l.setXEntrySpace(5f); // set the space between the legend entries on the x-axis
         l.setYEntrySpace(5f); // set the space between the legend entries on the y-axis
         l.setWordWrapEnabled(true);
+
+        final int[] colors = {R.color.red, R.color.green, R.color.yellow, R.color.aqua, R.color.fuchsia, R.color.maroon, R.color.lime};
+//        String[] tempList = {};
+//        l.setCustom(colors, categories);
+
 
         breakdown = new ArrayList<Entry>();
         categoryBreakdown = new HashMap<>();
@@ -182,7 +191,7 @@ public class MonthlyViewFragment extends Fragment {
                     PieDataSet setBreakdown = new PieDataSet(breakdown, "");
                     setBreakdown.setAxisDependency(YAxis.AxisDependency.LEFT);
                     setBreakdown.setSliceSpace(5f);
-                    setBreakdown.setColors(ColorTemplate.VORDIPLOM_COLORS);
+                    setBreakdown.setColors(colors, getContext());
 
                     ArrayList<String> xVals = new ArrayList<String>();
                     xVals.add("Food");
@@ -195,9 +204,10 @@ public class MonthlyViewFragment extends Fragment {
 //
                     PieData data = new PieData(xVals, setBreakdown);
                     data.setValueFormatter(new PercentFormatter());
-                    data.setValueTextSize(15f);
+                    data.setValueTextSize(10f);
                     chart.setData(data);
                     chart.invalidate(); // refresh
+
                 }
             }
         });

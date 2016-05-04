@@ -105,7 +105,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_location"
+                android:src="@drawable/ic_checkout"
                 android:id="@+id/locationIcon"
                 android:layout_weight="2.00"
                 android:scaleType="fitStart" />
@@ -171,7 +171,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_food"
+                android:src="@drawable/ic_receive"
                 android:id="@+id/categoryIcon"
                 android:layout_weight="2.00"
                 android:scaleType="fitStart" />
