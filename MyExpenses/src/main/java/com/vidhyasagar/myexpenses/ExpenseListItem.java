@@ -2,6 +2,8 @@ package com.vidhyasagar.myexpenses;
 
 import android.widget.ArrayAdapter;
 
+import java.util.Date;
+
 /**
  * Created by Vidhyasagar on 4/27/2016.
  */
@@ -11,10 +13,6 @@ public class ExpenseListItem {
     public String expenseType;
     public String expenseIcon;
     public float expenseAmount;
-
-    public ExpenseListItem(){
-        super();
-    }
 
     public ExpenseListItem(float expenseAmount, String expenseLocation, String expenseTime, String expenseIcon, String expenseType) {
         super();

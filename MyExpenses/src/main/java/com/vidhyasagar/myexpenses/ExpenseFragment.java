@@ -25,8 +25,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
@@ -35,6 +37,8 @@ import org.w3c.dom.Text;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Vidhyasagar on 4/30/2016.
@@ -104,7 +108,7 @@ public class ExpenseFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         sharedPreferences = getActivity().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
         String eLocation = sharedPreferences.getString("location", "");
 
@@ -179,6 +183,7 @@ public class ExpenseFragment extends Fragment {
 
         //Form time format later on when the save button is clicked
         final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
+        final SimpleDateFormat dataFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm aa");
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
@@ -225,13 +230,13 @@ public class ExpenseFragment extends Fragment {
                 //Save objects now
                 expAmount = amount.getText().toString();
 
-                Log.i("applog", "Amount : " + expAmount);
-                Log.i("applog", "Location : " + location.getText().toString());
-                Log.i("applog", "Type : " + categorySpinner.getSelectedItem().toString());
-                Log.i("applog", "Method : " + methodSpinner.getSelectedItem().toString());
-                Log.i("applog", "Time : " + timeFormat.format(c.getTime()));
+                if (!hasArguments) {
 
-                if(!hasArguments) {
+                    Log.i("applog", "Amount : " + expAmount);
+                    Log.i("applog", "Location : " + location.getText().toString());
+                    Log.i("applog", "Type : " + categorySpinner.getSelectedItem().toString());
+                    Log.i("applog", "Method : " + methodSpinner.getSelectedItem().toString());
+                    Log.i("applog", "Time : " + timeFormat.format(c.getTime()));
 //
                     ParseObject newExpense = new ParseObject("Expenses");
                     newExpense.put("amount", Float.parseFloat(expAmount));
@@ -252,16 +257,58 @@ public class ExpenseFragment extends Fragment {
                             }
                         }
                     });
-                }
-
-                else {
+                } else {
                     //Update existing database entry
+                    Log.i("applog", "Amount : " + sharedPreferences.getFloat("amount", -1f));
+                    Log.i("applog", "Location : " + sharedPreferences.getString("location", ""));
+                    Log.i("applog", "Type : " + sharedPreferences.getString("category", ""));
+                    Log.i("applog", "Method : " + sharedPreferences.getString("method", ""));
+                    Log.i("applog", "Time : " + sharedPreferences.getString("time", "noStringFoundSucka"));
+
+                    final SimpleDateFormat tempDf = new SimpleDateFormat("dd-MMM-yyyy");
+                    ParseQuery<ParseObject> pQuery = new ParseQuery<ParseObject>("Expenses");
+                    pQuery.whereEqualTo("location", sharedPreferences.getString("location", ""));
+                    pQuery.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                    pQuery.whereEqualTo("category", sharedPreferences.getString("category", ""));
+                    pQuery.whereEqualTo("method", sharedPreferences.getString("method", ""));
+                    pQuery.whereEqualTo("amount", sharedPreferences.getFloat("amount", -1f));
+                    pQuery.findInBackground(new FindCallback<ParseObject>() {
+                        @Override
+                        public void done(List<ParseObject> objects, ParseException e) {
+                            if (e == null) {
+
+                                if(objects.size() == 0) {
+                                    Log.i("applog", "NULL QUERY");
+                                }
+                                //Scope for improvement, alternate query way or add formatted 'time' for additional accuracy
+                                for (ParseObject object : objects) {
+                                        object.put("location",location.getText().toString());
+                                        object.put("category",categorySpinner.getSelectedItem().toString());
+                                        object.put("method",methodSpinner.getSelectedItem().toString());
+                                        object.put("amount",Float.parseFloat(expAmount));
+                                        object.saveInBackground(new SaveCallback() {
+                                            @Override
+                                            public void done(ParseException e) {
+                                                if(e == null) {
+                                                    sharedPreferences.edit().clear().commit();
+                                                    Toast.makeText(getActivity(), "Expense updated successfully!", Toast.LENGTH_LONG).show();
+                                                    getActivity().getSupportFragmentManager().popBackStackImmediate();
+                                                }else {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        });
+                                }
+                            } else {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
                 }
 
             }
         });
 
-        sharedPreferences.edit().clear().commit();
 
         return x;
     }

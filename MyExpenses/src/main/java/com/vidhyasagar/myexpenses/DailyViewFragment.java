@@ -41,7 +41,6 @@ public class DailyViewFragment extends Fragment {
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     Calendar c;
-
     TextView todaysDate;
 
     public void addToDiary(View v) {
@@ -55,6 +54,7 @@ public class DailyViewFragment extends Fragment {
 
         expenses.clear();
         final SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
 
         ParseQuery<ParseObject> query = new ParseQuery("Expenses");
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
@@ -67,7 +67,8 @@ public class DailyViewFragment extends Fragment {
                     String currentDate = df.format(c.getTime());
                     if (date.equals(dateToCompare)) {
                         ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
-                                object.getString("location"), object.getString("time"), object.getString("category"), object.getString("method"));
+                                object.getString("location"), timeFormat.format(object.getDate("time")),
+                                object.getString("category"), object.getString("method"));
                         expenses.add(temp);
                     }
                 }

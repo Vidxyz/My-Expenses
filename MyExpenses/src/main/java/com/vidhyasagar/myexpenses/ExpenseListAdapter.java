@@ -48,6 +48,7 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
                 sharedPreferences.edit().putString("category", items.get(position).expenseIcon).apply();
                 sharedPreferences.edit().putString("method", items.get(position).expenseType).apply();
                 sharedPreferences.edit().putFloat("amount", items.get(position).expenseAmount).apply();
+                sharedPreferences.edit().putString("time", items.get(position).expenseTime).apply();
 
                 fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                         android.R.anim.slide_in_left, android.R.anim.slide_out_right);
@@ -65,6 +66,7 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Delete query from the database and call notify data set changed
                 DailyViewFragment.expenses.remove(position);
                 notifyDataSetChanged();
             }
