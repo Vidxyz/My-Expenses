@@ -17,12 +17,6 @@ import com.parse.ParseUser;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static final int NUM_PAGES = 2;
-
-    private int pageNumber;
-    Boolean menuPositionLeft = true;
-    Boolean menuPositionRight = false;
-
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;
     FragmentManager mFragmentManager;

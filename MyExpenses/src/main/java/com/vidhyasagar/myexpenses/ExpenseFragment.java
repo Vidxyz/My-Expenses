@@ -1,6 +1,7 @@
 package com.vidhyasagar.myexpenses;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -48,6 +49,8 @@ public class ExpenseFragment extends Fragment {
     Spinner methodSpinner;
     ArrayAdapter<CharSequence> categoryAdapter;
     ArrayAdapter<CharSequence> methodAdapter;
+    Boolean hasArguments = false;
+    SharedPreferences sharedPreferences;
 
     String expAmount;
 
@@ -73,9 +76,49 @@ public class ExpenseFragment extends Fragment {
         todaysDate.setText(formattedDate);
     }
 
+    public int getCategoryPosition() {
+
+        switch(sharedPreferences.getString("category", "")) {
+            case "Food": return 0;
+            case "Groceries" : return 1;
+            case "Movies" : return 2;
+            case "Alcohol" : return 3;
+            case "Rent" : return 4;
+            case "Hydro" : return 5;
+            case "Other" : return 6;
+        }
+
+        return -1;
+    }
+
+    public int getMethodPosition() {
+        switch(sharedPreferences.getString("method", "")) {
+            case "Debit": return 0;
+            case "Cash" : return 1;
+            case "Credit" : return 2;
+            case "Other" : return 3;
+        }
+
+        return -1;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        sharedPreferences = getActivity().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
+        String eLocation = sharedPreferences.getString("location", "");
+
+        if(eLocation.equals("")) {
+            Log.i("applog", "bundle is null");
+            hasArguments = false;
+        }
+        else {
+            Log.i("applog", "bundle is not null");
+            hasArguments = true;
+        }
+
+
+
         final View x = inflater.inflate(R.layout.fragment_diary_expense,null);
 
         //CANCEL AND SAVE BUTTONS
@@ -110,6 +153,9 @@ public class ExpenseFragment extends Fragment {
                 return false;
             }
         });
+        if(hasArguments) {
+            amount.setText(String.valueOf(sharedPreferences.getFloat("amount", -1f)));
+        }
 
 
         final EditText location = (EditText) x.findViewById(R.id.locationEditText);
@@ -123,6 +169,9 @@ public class ExpenseFragment extends Fragment {
                 return false;
             }
         });
+        if(hasArguments) {
+            location.setText(sharedPreferences.getString("location", ""));
+        }
 
         //Date stuff
         todaysDate = (TextView) x.findViewById(R.id.todaysDate);
@@ -163,6 +212,12 @@ public class ExpenseFragment extends Fragment {
         categorySpinner.setAdapter(categoryAdapter);
         methodSpinner.setAdapter(methodAdapter);
 
+        if(hasArguments) {
+            int categoryPosition = getCategoryPosition();
+            int methodPosition = getMethodPosition();
+            categorySpinner.setSelection(categoryPosition);
+            methodSpinner.setSelection(methodPosition);
+        }
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,29 +230,38 @@ public class ExpenseFragment extends Fragment {
                 Log.i("applog", "Type : " + categorySpinner.getSelectedItem().toString());
                 Log.i("applog", "Method : " + methodSpinner.getSelectedItem().toString());
                 Log.i("applog", "Time : " + timeFormat.format(c.getTime()));
-//
-                ParseObject newExpense = new ParseObject("Expenses");
-                newExpense.put("amount", Float.parseFloat(expAmount));
-                newExpense.put("time", c.getTime());
-                newExpense.put("category", categorySpinner.getSelectedItem().toString());
-                newExpense.put("method", methodSpinner.getSelectedItem().toString());
-                newExpense.put("location", location.getText().toString());
-                newExpense.put("username", ParseUser.getCurrentUser().getUsername());
 
-                newExpense.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            Toast.makeText(getActivity(), "Expense Saved!", Toast.LENGTH_SHORT).show();
-                            getActivity().getSupportFragmentManager().popBackStackImmediate();
-                        } else {
-                            e.printStackTrace();
+                if(!hasArguments) {
+//
+                    ParseObject newExpense = new ParseObject("Expenses");
+                    newExpense.put("amount", Float.parseFloat(expAmount));
+                    newExpense.put("time", c.getTime());
+                    newExpense.put("category", categorySpinner.getSelectedItem().toString());
+                    newExpense.put("method", methodSpinner.getSelectedItem().toString());
+                    newExpense.put("location", location.getText().toString());
+                    newExpense.put("username", ParseUser.getCurrentUser().getUsername());
+
+                    newExpense.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Toast.makeText(getActivity(), "Expense Saved!", Toast.LENGTH_SHORT).show();
+                                getActivity().getSupportFragmentManager().popBackStackImmediate();
+                            } else {
+                                e.printStackTrace();
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
+                else {
+                    //Update existing database entry
+                }
 
             }
         });
+
+        sharedPreferences.edit().clear().commit();
 
         return x;
     }

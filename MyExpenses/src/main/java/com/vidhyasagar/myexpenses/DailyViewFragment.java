@@ -145,7 +145,7 @@ public class DailyViewFragment extends Fragment {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
         expensesList = (ListView) getActivity().findViewById(R.id.expensesList);
-        expenseListAdapter = new ExpenseListAdapter(getActivity(), R.layout.layout_list_swipe, expenses);
+        expenseListAdapter = new ExpenseListAdapter(getActivity(), R.layout.layout_list_swipe, expenses, fragmentManager);
         expensesList.setAdapter(expenseListAdapter);
         setUpExpensesListView(formattedDate);
     }

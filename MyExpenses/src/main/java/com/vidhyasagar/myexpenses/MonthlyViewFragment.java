@@ -84,11 +84,11 @@ public class MonthlyViewFragment extends Fragment {
         chart.setBackgroundColor(Color.TRANSPARENT);
         chart.setUsePercentValues(true);
         chart.setDescription("");
-        chart.setHoleRadius(50f);
+        chart.setHoleRadius(60f);
         chart.setTransparentCircleRadius(1f);
-        chart.setDrawSliceText(true);
+        chart.setDrawSliceText(false);
         chart.setCenterText("Monthly Breakdown");
-        chart.setCenterTextSize(12f);
+        chart.setCenterTextSize(13f);
         chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
 
             @Override
