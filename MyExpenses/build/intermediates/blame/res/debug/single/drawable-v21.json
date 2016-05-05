@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable-v21\\md_btn_shape.xml"
     },
     {
-        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v21\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\md_btn_selector_ripple.xml",
         "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.8\\res\\drawable-v21\\md_btn_selector_ripple.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Vidhyasagar\\AndroidStudioProjects\\MyExpenses\\MyExpenses\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\md_btn_selector_ripple_dark.xml",

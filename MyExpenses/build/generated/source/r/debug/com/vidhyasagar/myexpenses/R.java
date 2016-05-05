@@ -3234,6 +3234,7 @@ containing a value of this type.
         public static final int nav_item_calendar=0x7f0e00d0;
         public static final int nav_item_dashboard=0x7f0e00ce;
         public static final int nav_item_diary=0x7f0e00cf;
+        public static final int nav_item_logout=0x7f0e00d2;
         public static final int nav_item_progress=0x7f0e00d1;
         public static final int navdrawer=0x7f0e0079;
         public static final int navigation_header_container=0x7f0e0085;

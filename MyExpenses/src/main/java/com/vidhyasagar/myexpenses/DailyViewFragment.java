@@ -37,6 +37,7 @@ public class DailyViewFragment extends Fragment {
 
     ListView expensesList;
     ExpenseListAdapter expenseListAdapter;
+    ArrayAdapter arrayAdapter;
     static ArrayList<ExpenseListItem> expenses;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -62,17 +63,31 @@ public class DailyViewFragment extends Fragment {
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                for (ParseObject object : objects) {
-                    String date = df.format(object.getDate("time"));
-                    String currentDate = df.format(c.getTime());
-                    if (date.equals(dateToCompare)) {
-                        ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
-                                object.getString("location"), timeFormat.format(object.getDate("time")),
-                                object.getString("category"), object.getString("method"));
-                        expenses.add(temp);
+                expensesList = (ListView) getActivity().findViewById(R.id.expensesList);
+                if(objects.size() != 0) {
+                    for (ParseObject object : objects) {
+                        String date = df.format(object.getDate("time"));
+                        String currentDate = df.format(c.getTime());
+                        if (date.equals(dateToCompare)) {
+                            ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
+                                    object.getString("location"), timeFormat.format(object.getDate("time")),
+                                    object.getString("category"), object.getString("method"));
+                            expenses.add(temp);
+                        }
                     }
+                    expenseListAdapter = new ExpenseListAdapter(getActivity(), R.layout.layout_list_swipe, expenses, fragmentManager);
+                    expensesList.setAdapter(expenseListAdapter);
+                    expenseListAdapter.notifyDataSetChanged();
                 }
-                expenseListAdapter.notifyDataSetChanged();
+
+                if(objects.size() == 0 || expenses.size() == 0) {
+                    Log.i("applog", "No objects found for this day");
+                    ArrayList<String> defaultMessage = new ArrayList<String>();
+                    defaultMessage.add("No expenses found for this day, perhaps you forgot to add it?");
+                    arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, defaultMessage);
+                    expensesList.setAdapter(arrayAdapter);
+                    arrayAdapter.notifyDataSetChanged();
+                }
             }
         });
 
@@ -145,9 +160,7 @@ public class DailyViewFragment extends Fragment {
         super.onStart();
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
-        expensesList = (ListView) getActivity().findViewById(R.id.expensesList);
-        expenseListAdapter = new ExpenseListAdapter(getActivity(), R.layout.layout_list_swipe, expenses, fragmentManager);
-        expensesList.setAdapter(expenseListAdapter);
+
         setUpExpensesListView(formattedDate);
     }
 

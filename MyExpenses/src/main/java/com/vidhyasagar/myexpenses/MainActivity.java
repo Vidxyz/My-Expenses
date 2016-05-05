@@ -1,5 +1,6 @@
 package com.vidhyasagar.myexpenses;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -10,8 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 
 import com.parse.ParseUser;
+
+import java.util.logging.Handler;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        Window window = getWindow();
+        window.setStatusBarColor(getResources().getColor(R.color.black));
+
         /**
          *Setup the DrawerLayout and NavigationView
          */
@@ -53,10 +61,17 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (menuItem.getItemId() == R.id.nav_item_diary) {
+                else if (menuItem.getItemId() == R.id.nav_item_diary) {
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView,new DiaryFragment()).addToBackStack("diary").commit();
                 }
+
+                else if(menuItem.getItemId() == R.id.nav_item_logout) {
+                    ParseUser.logOut();
+                    Intent i = new Intent(getApplicationContext(), LoginScreen.class);
+                    startActivity(i);
+                }
+
 
                 return false;
             }

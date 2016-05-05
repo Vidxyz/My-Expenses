@@ -145,6 +145,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/locationEditText"
+                    android:inputType="textCapSentences"
                     android:layout_weight="1.00"
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="0dp"
@@ -313,8 +314,6 @@
             android:layout_weight="1.0" />
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>
