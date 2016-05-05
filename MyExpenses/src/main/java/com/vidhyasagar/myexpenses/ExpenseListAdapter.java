@@ -19,6 +19,12 @@ import android.widget.Toast;
 import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.adapters.ArraySwipeAdapter;
 import com.daimajia.swipe.adapters.BaseSwipeAdapter;
+import com.parse.DeleteCallback;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +73,43 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
             @Override
             public void onClick(View v) {
                 //Delete query from the database and call notify data set changed
+                ExpenseListItem item = items.get(position);
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Expenses");
+                query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.whereEqualTo("location", item.expenseLocation);
+                query.whereEqualTo("method", item.expenseType);
+                query.whereEqualTo("category", item.expenseIcon);
+                query.whereEqualTo("amount", item.expenseAmount);
+
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if(e == null) {
+                            if(objects.size() == 0) {
+                                Log.i("applog", "delete stack is empty");
+                            }
+
+                            for(ParseObject object : objects) {
+                                object.deleteInBackground(new DeleteCallback() {
+                                    @Override
+                                    public void done(ParseException e) {
+                                        if(e != null) {
+                                            e.printStackTrace();
+                                        }
+                                        else {
+                                            Toast.makeText(getContext(), "Deleted expense!", Toast.LENGTH_LONG).show();
+                                            DashboardFragment.refresh();
+                                        }
+                                    }
+                                });
+                            }
+
+                        }else {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
                 DailyViewFragment.expenses.remove(position);
                 notifyDataSetChanged();
             }

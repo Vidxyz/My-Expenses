@@ -22,6 +22,13 @@ public class DashboardFragment extends Fragment {
     public static ViewPager viewPager;
     public static int no_of_tabs = 2 ;
 
+    static MyAdapter myAdapter;
+
+    static public void refresh() {
+        Log.i("applog", "Refresh Called");
+        myAdapter.notifyDataSetChanged();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,7 +38,8 @@ public class DashboardFragment extends Fragment {
         View x =  inflater.inflate(R.layout.layout_tab,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.pager);
-        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+        myAdapter = new MyAdapter(getChildFragmentManager());
+        viewPager.setAdapter(myAdapter);
 
         tabLayout.post(new Runnable() {
             @Override
@@ -66,6 +74,11 @@ public class DashboardFragment extends Fragment {
 
             return no_of_tabs;
 
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
         }
 
         @Override

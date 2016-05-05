@@ -113,11 +113,9 @@ public class ExpenseFragment extends Fragment {
         String eLocation = sharedPreferences.getString("location", "");
 
         if(eLocation.equals("")) {
-            Log.i("applog", "bundle is null");
             hasArguments = false;
         }
         else {
-            Log.i("applog", "bundle is not null");
             hasArguments = true;
         }
 

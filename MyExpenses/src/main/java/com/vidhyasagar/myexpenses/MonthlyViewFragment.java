@@ -148,8 +148,8 @@ public class MonthlyViewFragment extends Fragment {
                             String objCategory = object.getString("category");
                             if (objCategory.equals("Food")) {
                                 addToDictionary("Food", object);
-
-                            } else if (objCategory.equals("Groceries")) {
+                            }
+                            else if (objCategory.equals("Groceries")) {
                                addToDictionary("Groceries", object);
                             }
                             else if(objCategory.equals("Other")) {
@@ -220,6 +220,7 @@ public class MonthlyViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentManager = getActivity().getSupportFragmentManager();
+        Log.i("applog", "Monthly onCreateView executed");
         c = Calendar.getInstance();
         View x = inflater.inflate(R.layout.fragment_monthly_view,null);
         FloatingActionButton fab = (FloatingActionButton) x.findViewById(R.id.addDiaryButton);
@@ -236,7 +237,6 @@ public class MonthlyViewFragment extends Fragment {
     public void onStart() {
         super.onStart();
         setUpChartOverview();
-
 
     }
 }
