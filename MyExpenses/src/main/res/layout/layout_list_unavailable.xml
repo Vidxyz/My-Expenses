@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:padding="10dp"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:orientation="horizontal"
+    android:weightSum="8"
+    android:id="@+id/surface_wrapper"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--What you want to show in SurfaceView-->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_photo_camera_grey600_24dp"
+        android:id="@+id/expenseIcon"
+        android:layout_weight="2.00"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="No expenses for this day! "
+        android:id="@+id/errorMessage"
+        android:layout_weight="6.00"
+        android:layout_gravity="center"
+        android:typeface="serif" />
+
+
+</LinearLayout>

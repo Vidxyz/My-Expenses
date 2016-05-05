@@ -450,6 +450,7 @@
     <string name="closedrawer">Close drawer</string>
     <string name="createnote">Create note</string>
     <string name="favorites">Favorites</string>
+    <string name="fragment_budget">My Budget</string>
     <string name="fragment_dashboard">My Dashboard</string>
     <string name="fragment_diary">My Diary</string>
     <string name="hello_world">Hello World!</string>

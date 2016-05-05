@@ -576,10 +576,10 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f040016;
 		public static final int abc_search_view = 0x7f040017;
 		public static final int abc_select_dialog_material = 0x7f040018;
-		public static final int select_dialog_item_material = 0x7f040046;
-		public static final int select_dialog_multichoice_material = 0x7f040047;
-		public static final int select_dialog_singlechoice_material = 0x7f040048;
-		public static final int support_simple_spinner_dropdown_item = 0x7f040049;
+		public static final int select_dialog_item_material = 0x7f040048;
+		public static final int select_dialog_multichoice_material = 0x7f040049;
+		public static final int select_dialog_singlechoice_material = 0x7f04004a;
+		public static final int support_simple_spinner_dropdown_item = 0x7f04004b;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f070000;
@@ -599,11 +599,11 @@ public final class R {
 		public static final int abc_shareactionprovider_share_with = 0x7f070010;
 		public static final int abc_shareactionprovider_share_with_application = 0x7f070011;
 		public static final int abc_toolbar_collapse_description = 0x7f070012;
-		public static final int path_arrow = 0x7f070024;
-		public static final int path_drawer = 0x7f070025;
-		public static final int path_pause = 0x7f070026;
-		public static final int path_play = 0x7f070027;
-		public static final int path_stop = 0x7f070028;
+		public static final int path_arrow = 0x7f070025;
+		public static final int path_drawer = 0x7f070026;
+		public static final int path_pause = 0x7f070027;
+		public static final int path_play = 0x7f070028;
+		public static final int path_stop = 0x7f070029;
 	}
 	public static final class style {
 		public static final int AlertDialog_AppCompat = 0x7f0a008d;

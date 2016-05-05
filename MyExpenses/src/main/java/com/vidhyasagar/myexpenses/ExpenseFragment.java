@@ -119,8 +119,6 @@ public class ExpenseFragment extends Fragment {
             hasArguments = true;
         }
 
-
-
         final View x = inflater.inflate(R.layout.fragment_diary_expense,null);
 
         //CANCEL AND SAVE BUTTONS

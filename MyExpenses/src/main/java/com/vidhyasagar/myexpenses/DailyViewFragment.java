@@ -1,5 +1,6 @@
 package com.vidhyasagar.myexpenses;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -37,12 +38,31 @@ public class DailyViewFragment extends Fragment {
 
     ListView expensesList;
     ExpenseListAdapter expenseListAdapter;
-    ArrayAdapter arrayAdapter;
+    MyAdapter myAdapter;
     static ArrayList<ExpenseListItem> expenses;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     Calendar c;
     TextView todaysDate;
+
+
+    class MyAdapter extends ArrayAdapter {
+
+
+        public MyAdapter(Context context, int resource, ArrayList<String> objects) {
+            super(context, resource, objects);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = convertView;
+            if(v == null) {
+                LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = layoutInflater.inflate(R.layout.layout_list_unavailable, null);
+            }
+            return v;
+        }
+    }
 
     public void addToDiary(View v) {
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -82,11 +102,11 @@ public class DailyViewFragment extends Fragment {
 
                 if(objects.size() == 0 || expenses.size() == 0) {
                     Log.i("applog", "No objects found for this day");
-                    ArrayList<String> defaultMessage = new ArrayList<String>();
-                    defaultMessage.add("No expenses found for this day, perhaps you forgot to add it?");
-                    arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, defaultMessage);
-                    expensesList.setAdapter(arrayAdapter);
-                    arrayAdapter.notifyDataSetChanged();
+                    ArrayList<String> temp = new ArrayList<String>();
+                    temp.add("Error message");
+                    myAdapter = new MyAdapter(getContext(), R.layout.layout_list_unavailable, temp);
+                    expensesList.setAdapter(myAdapter);
+                    myAdapter.notifyDataSetChanged();
                 }
             }
         });

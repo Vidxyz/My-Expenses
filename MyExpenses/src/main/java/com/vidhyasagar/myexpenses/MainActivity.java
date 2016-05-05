@@ -72,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
                 }
 
+                else if(menuItem.getItemId() == R.id.nav_item_budget) {
+                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+                    xfragmentTransaction.replace(R.id.containerView,new BudgetFragment()).addToBackStack("budget").commit();
+                }
+
 
                 return false;
             }
