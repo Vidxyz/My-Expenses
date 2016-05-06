@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="70dp" android:id="@+id/budgetSwipeLayout">
+    <!-- Bottom View Start-->
+    <LinearLayout
+        android:background="#66ddff00"
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="160dp"
+        android:weightSum="2"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <!--What you want to show-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_edit"
+            android:id="@+id/listEditButton"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_delete"
+            android:id="@+id/listDeleteButton"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <!-- Bottom View End-->
+
+    <!-- Surface View Start -->
+    <LinearLayout
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        android:id="@+id/surface_wrapper">
+        <!--What you want to show in SurfaceView-->
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_delete"
+            android:id="@+id/monthIcon"
+            android:scaleType="center" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4.00"
+            android:weightSum="4">
+
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.00"
+                android:text="January"
+                android:textSize="20sp"
+                android:scrollIndicators="left"
+                android:id="@+id/budgetMonth"
+                android:layout_marginLeft="30dp"
+                android:textColor="#1e1b1b"
+                android:phoneNumber="true"
+                android:gravity="left|center_vertical" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget: $50"
+                android:textSize="20sp"
+                android:layout_weight="2.00"
+                android:id="@+id/budgetAmount"
+                android:scrollIndicators="left"
+                android:layout_marginLeft="30dp"
+                android:textColor="#1e1b1b"
+                android:gravity="left|center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/budgetMonth" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <!-- Surface View End -->
+</com.daimajia.swipe.SwipeLayout>

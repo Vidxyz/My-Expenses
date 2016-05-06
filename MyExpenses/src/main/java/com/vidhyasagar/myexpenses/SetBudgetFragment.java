@@ -266,7 +266,7 @@ public class SetBudgetFragment extends Fragment {
                                     });
                                 }
                             }
-                                Toast.makeText(getContext(), "Budget Updated!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Budget Updated!", Toast.LENGTH_SHORT).show();
                                 getActivity().getSupportFragmentManager().popBackStackImmediate();
                             }
                         }

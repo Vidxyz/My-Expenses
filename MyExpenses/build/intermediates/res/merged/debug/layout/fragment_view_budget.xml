@@ -4,33 +4,54 @@
     android:id="@id/relativeLayout"
     android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:maxLength="5"
-        android:id="@+id/budgetAmount"
-        android:layout_marginTop="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/amountSeekBar"
-        android:layout_marginStart="71dp"
-        android:textSize="30sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/budgetAmount"
-        android:id="@+id/seekBarLabel"
-        android:text="Set budget amount :"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#1b1717"
-        android:textSize="20sp" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:weightSum="8.00"
+        android:id="@+id/listHeader"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.00"
+            android:background="#4489e4">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Month"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
 
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5.00"
+            android:background="#dc3d3d">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Budget"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/listView2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/listHeader"
+        android:layout_marginTop="0dp" />
 
 </RelativeLayout>
