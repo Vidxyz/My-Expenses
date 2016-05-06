@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 public class BudgetFragment extends Fragment {
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
-    public static int no_of_tabs = 1 ;
+    public static int no_of_tabs = 2 ;
 
     @Nullable
     @Override
@@ -55,6 +55,7 @@ public class BudgetFragment extends Fragment {
         {
             switch (position){
                 case 0 : return new SetBudgetFragment();
+                case 1: return  new ViewBudgetFragment();
             }
             return null;
         }
@@ -70,7 +71,9 @@ public class BudgetFragment extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Budget";
+                    return "Set Budget";
+                case 1:
+                    return "View Monthly Budgets";
             }
             return null;
         }

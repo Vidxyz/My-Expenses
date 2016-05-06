@@ -18,12 +18,20 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +50,8 @@ public class SetBudgetFragment extends Fragment {
     ArrayAdapter monthAdapter;
     ListView listView;
     RelativeLayout relativeLayout;
-    int amount;
+    Button saveButton;
+    Button cancelButton;
 
     public void addMonths() {
         months = new ArrayList<>();
@@ -80,6 +89,11 @@ public class SetBudgetFragment extends Fragment {
         budgetAmount = (EditText) getActivity().findViewById(R.id.budgetAmount);
         amountSeekBar = (SeekBar) getActivity().findViewById(R.id.amountSeekBar);
 
+        //CANCEL AND SAVE BUTTONS
+        cancelButton = (Button) getActivity().findViewById(R.id.cancelButton);
+        saveButton = (Button) getActivity().findViewById(R.id.saveButton);
+
+
         relativeLayout = (RelativeLayout) getActivity().findViewById(R.id.relativeLayout);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,12 +125,10 @@ public class SetBudgetFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if(!s.toString().equals("")) {
-                    Log.i("applog", s.toString());
                     perWeek.setText(String.valueOf(Float.parseFloat(s.toString()) / 4) + " / Week");
                     perYear.setText(String.valueOf(Float.parseFloat(s.toString()) * 12) + " / Year");
                 }
                 else  {
-                    Log.i("applog", s.toString());
                     perWeek.setText("0 / Week");
                     perYear.setText("0 / Year");
                 }
@@ -124,16 +136,6 @@ public class SetBudgetFragment extends Fragment {
             }
         });
 
-//        budgetAmount.setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                if(keyCode == KeyEvent.KEYCODE_DEL) {
-////                    budgetAmount.setText("");
-//                    Log.i("applog", "delete pressed");
-//                }
-//                return false;
-//            }
-//        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -163,7 +165,6 @@ public class SetBudgetFragment extends Fragment {
 //                                            monthsPerLine++;
 //                                            row = row + months.get(i) + " ";
                                             listItems.add(months.get(i));
-                                            Log.i("applog", "Row is " + row);
                                         }
 //                                        else {
 //                                            monthsPerLine = 0;
@@ -188,7 +189,6 @@ public class SetBudgetFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 budgetAmount.setText(String.valueOf(progress));
-                amount = progress;
             }
 
             @Override
@@ -197,6 +197,80 @@ public class SetBudgetFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+
+        //SAVE AND CANCEL BUTTONS
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStackImmediate();
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Budgets");
+                query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if(e != null) {
+                            e.printStackTrace();
+                        }
+                        else {
+                            if(objects.size() == 0) {
+                                //NO object found, must create it
+                                Log.i("applog", "Creating new objects");
+                                for(String item : listItems) {
+                                    ParseObject newObject = new ParseObject("Budgets");
+                                    newObject.put("amount", Float.parseFloat(budgetAmount.getText().toString()));
+                                    newObject.put("username", ParseUser.getCurrentUser().getUsername());
+                                    newObject.put("month", item);
+                                    newObject.saveInBackground(new SaveCallback() {
+                                        @Override
+                                        public void done(ParseException e) {
+                                            if(e != null) {
+                                                e.printStackTrace();
+                                            }
+                                            else {
+                                                Log.i("applog", "budget object added");
+                                            }
+                                        }
+                                    });
+                                }
+
+                                Toast.makeText(getContext(), "Budget Added!", Toast.LENGTH_SHORT).show();
+                                getActivity().getSupportFragmentManager().popBackStackImmediate();
+                            }
+                            else {
+                                for(ParseObject object : objects) {
+                                    object.deleteInBackground();
+                                }
+                                for(String item : listItems) {
+                                    ParseObject newObject = new ParseObject("Budgets");
+                                    newObject.put("amount", Float.parseFloat(budgetAmount.getText().toString()));
+                                    newObject.put("username", ParseUser.getCurrentUser().getUsername());
+                                    newObject.put("month", item);
+                                    newObject.saveInBackground(new SaveCallback() {
+                                        @Override
+                                        public void done(ParseException e) {
+                                            if (e != null) {
+                                                e.printStackTrace();
+                                            } else {
+                                                Log.i("applog", "budget object added");
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                                Toast.makeText(getContext(), "Budget Updated!", Toast.LENGTH_SHORT).show();
+                                getActivity().getSupportFragmentManager().popBackStackImmediate();
+                            }
+                        }
+                });
             }
         });
     }

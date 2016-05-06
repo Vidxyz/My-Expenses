@@ -46,12 +46,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BudgetFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BudgetFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/BudgetFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.81085527">
+              <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewBudgetFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ViewBudgetFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,43 +72,59 @@
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/SetBudgetFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="122" column="82" selection-start-line="122" selection-start-column="82" selection-end-line="122" selection-end-column="82" />
+              <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2729#2881#0" expanded="true" />
-                <element signature="e#2880#2881#0" expanded="true" />
-                <element signature="e#4679#7207#0" expanded="true" />
-                <element signature="e#5555#7090#0" expanded="true" />
-                <element signature="e#7089#7090#0" expanded="true" />
-                <element signature="e#7206#7207#0" expanded="true" />
+                <element signature="e#7945#11719#0" expanded="true" />
+                <element signature="e#8100#8113#0" expanded="true" />
+                <element signature="e#8255#11693#0" expanded="true" />
+                <element signature="e#9241#9828#0" expanded="true" />
+                <element signature="e#9827#9828#0" expanded="true" />
+                <element signature="e#10802#11346#0" expanded="true" />
+                <element signature="e#11345#11346#0" expanded="true" />
+                <element signature="e#11692#11693#0" expanded="true" />
+                <element signature="e#11718#11719#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_budget_budget.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_budget_budget.xml">
+      <file leaf-file-name="fragment_view_budget.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_view_budget.xml">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_budget_budget.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_budget_budget.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="86" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="17" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="fragment_diary_expense.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_expense.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.827586">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="33" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -104,7 +132,7 @@
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="136" column="40" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="40" />
+              <caret line="249" column="98" selection-start-line="248" selection-start-column="32" selection-end-line="249" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4259#4411#0" expanded="true" />
@@ -129,17 +157,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="24" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DashboardFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1121#1272#0" expanded="false" />
+                <element signature="e#1271#1272#0" expanded="false" />
+                <element signature="e#1581#1582#0" expanded="false" />
+                <element signature="e#1614#1615#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1816,10 +1840,12 @@
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/menu/menu_side_menu.xml" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MainActivity.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/BudgetFragment.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java" />
-        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/SetBudgetFragment.java" />
         <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_budget_budget.xml" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/SetBudgetFragment.java" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_view_budget.xml" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ViewBudgetFragment.java" />
+        <option value="$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/BudgetFragment.java" />
       </list>
     </option>
   </component>
@@ -1862,7 +1888,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
@@ -1938,8 +1966,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2143,7 +2169,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2226847" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3381894" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4880333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2152,7 +2178,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -2215,24 +2241,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MonthlyViewFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_expense.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2241,47 +2249,47 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_tab.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_monthly_view.xml">
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_monthly_view.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="63" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_swipe.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_swipe.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_daily_view.xml">
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_daily_view.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
@@ -2313,47 +2321,47 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_tab.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_swipe.xml">
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_swipe.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="95" column="43" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_monthly_view.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_monthly_view.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_daily_view.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_daily_view.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
@@ -2407,14 +2415,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_daily_view.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25844595">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ParseInitialize.java">
@@ -2461,14 +2469,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_monthly_view.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseListItem.java">
@@ -2501,36 +2509,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_tab.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/activity_dashboard.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/activity_dashboard.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_unavailable.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_unavailable.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.9310346">
           <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/menu/menu_side_menu.xml">
@@ -2542,14 +2550,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/layout_list_swipe.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-60.96552">
           <caret line="104" column="33" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
@@ -2570,15 +2578,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="87" selection-start-line="76" selection-start-column="87" selection-end-line="76" selection-end-column="87" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1395#1546#0" expanded="false" />
+            <element signature="e#1545#1546#0" expanded="false" />
+            <element signature="e#1858#1859#0" expanded="false" />
+            <element signature="e#1891#1892#0" expanded="false" />
+            <element signature="e#2326#2327#0" expanded="false" />
+            <element signature="e#2370#2371#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2586,7 +2594,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1121#1272#0" expanded="false" />
+            <element signature="e#1271#1272#0" expanded="false" />
+            <element signature="e#1581#1582#0" expanded="false" />
+            <element signature="e#1614#1615#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2598,18 +2612,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/BudgetFragment.java">
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_income.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.8275362">
+          <caret line="316" column="0" selection-start-line="294" selection-start-column="4" selection-end-line="316" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="87" selection-start-line="76" selection-start-column="87" selection-end-line="76" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_expense.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ExpenseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="40" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="40" />
+          <caret line="249" column="98" selection-start-line="248" selection-start-column="32" selection-end-line="249" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4259#4411#0" expanded="true" />
@@ -2618,51 +2654,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_income.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_budget_budget.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8275362">
-          <caret line="316" column="0" selection-start-line="294" selection-start-column="4" selection-end-line="316" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="86" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="17" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_diary_expense.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.827586">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="33" />
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_view_budget.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/SetBudgetFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="122" column="82" selection-start-line="122" selection-start-column="82" selection-end-line="122" selection-end-column="82" />
+          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2729#2881#0" expanded="true" />
-            <element signature="e#2880#2881#0" expanded="true" />
-            <element signature="e#4679#7207#0" expanded="true" />
-            <element signature="e#5555#7090#0" expanded="true" />
-            <element signature="e#7089#7090#0" expanded="true" />
-            <element signature="e#7206#7207#0" expanded="true" />
+            <element signature="e#7945#11719#0" expanded="true" />
+            <element signature="e#8100#8113#0" expanded="true" />
+            <element signature="e#8255#11693#0" expanded="true" />
+            <element signature="e#9241#9828#0" expanded="true" />
+            <element signature="e#9827#9828#0" expanded="true" />
+            <element signature="e#10802#11346#0" expanded="true" />
+            <element signature="e#11345#11346#0" expanded="true" />
+            <element signature="e#11692#11693#0" expanded="true" />
+            <element signature="e#11718#11719#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/res/layout/fragment_budget_budget.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/ViewBudgetFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/BudgetFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81085527">
+          <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
           <folding />
         </state>
       </provider>
