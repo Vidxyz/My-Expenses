@@ -182,6 +182,7 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="purple">#800080</color>
     <color name="red">#c8f22222</color>
+    <color name="red2">#ff0000</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
