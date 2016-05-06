@@ -1,6 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@id/relativeLayout"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:maxLength="5"
+        android:id="@+id/budgetAmount"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/amountSeekBar"
+        android:layout_marginStart="71dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/budgetAmount"
+        android:id="@+id/seekBarLabel"
+        android:text="Set budget amount :"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#1b1717"
+        android:textSize="20sp" />
+
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/amountSeekBar"
+        android:layout_below="@+id/seekBarLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:max="1000"
+        android:indeterminate="false"
+        android:progress="500"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ Month"
+        android:id="@+id/perMonth"
+        android:textColor="#141111"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/budgetAmount"
+        android:layout_alignBottom="@+id/budgetAmount"
+        android:layout_toEndOf="@+id/budgetAmount" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 49,236 / Year"
+        android:id="@+id/perYear"
+        android:layout_below="@+id/amountSeekBar"
+        android:layout_alignStart="@+id/amountSeekBar"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textColor="#f03434" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 125 / Week"
+        android:id="@+id/perWeek"
+        android:textSize="25sp"
+        android:textColor="#f03434"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/perYear"
+        android:layout_alignStart="@+id/perYear"
+        android:layout_marginTop="15dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/perWeek"
+        android:id="@+id/listViewLabel"
+        android:text="Months :"
+        android:layout_marginLeft="25dp"
+        android:textSize="20sp"
+        android:textColor="#141111"
+        android:layout_marginTop="20dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/listView"
+        android:layout_below="@+id/listViewLabel"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:layout_below="@id/listView"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancelButton"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/saveButton"
+            android:layout_weight="1.0" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
