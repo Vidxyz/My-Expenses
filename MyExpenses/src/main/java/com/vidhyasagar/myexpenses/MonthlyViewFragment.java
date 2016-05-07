@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -55,6 +56,13 @@ public class MonthlyViewFragment extends Fragment {
     ArrayList<Entry> breakdown;
     HashMap<String, Float> categoryBreakdown;
     PieChart chart;
+
+    TextView monthlyBudget;
+    TextView amountRemaining;
+    TextView amountSpent;
+
+    float spent;
+    float budget;
 
     public void addToDiary(View v) {
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -215,6 +223,101 @@ public class MonthlyViewFragment extends Fragment {
 
     }
 
+    public String formattedMonth(String month) {
+        String toReturn = "";
+        if(month.equals("Jan")) {
+            toReturn = "January";
+        }
+        else if(month.equals("Feb")) {
+            toReturn = "February";
+        }
+        else if(month.equals("Mar")) {
+            toReturn = "March";
+        }
+        else if(month.equals("Apr")) {
+            toReturn = "April";
+        }
+        else if(month.equals("May")) {
+            toReturn = "May";
+        }
+        else if(month.equals("Jun")) {
+            toReturn = "June";
+        }
+        else if(month.equals("Jul")) {
+            toReturn = "July";
+        }
+        else if(month.equals("Aug")) {
+            toReturn = "August";
+        }
+        else if(month.equals("Sep")) {
+            toReturn = "September";
+        }
+        else if(month.equals("Oct")) {
+            toReturn = "October";
+        }
+        else if(month.equals("Nov")) {
+            toReturn = "November";
+        }
+        else if(month.equals("Dec")) {
+            toReturn = "December";
+        }
+
+        return toReturn;
+    }
+
+
+    public void setUpStats() {
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MMM");
+        String month = monthFormat.format(c.getTime());
+
+        monthlyBudget = (TextView) getActivity().findViewById(R.id.monthlyBudget);
+        amountRemaining = (TextView) getActivity().findViewById(R.id.amountRemaining);
+        amountSpent = (TextView) getActivity().findViewById(R.id.amountSpent);
+
+//        month = formattedMonth(month);
+        final ParseQuery<ParseObject> newQuery = new ParseQuery<ParseObject>("Budgets");
+        newQuery.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+        newQuery.whereEqualTo("month", formattedMonth(month));
+
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Expenses");
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+        query.whereEqualTo("month", month);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e != null) {
+                    e.printStackTrace();
+                } else {
+                    spent = 0;
+                    if(objects.size() == 0) {
+                        Log.i("applog", "expenses come to 0");
+                    }
+                    for (ParseObject object : objects) {
+                        spent = spent + Float.parseFloat(object.getNumber("amount").toString());
+                    }
+                }
+                newQuery.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if(e != null) {
+                            e.printStackTrace();
+                        }
+                        else {
+                            for(ParseObject object : objects) {
+                                budget = Float.parseFloat(object.getNumber("amount").toString());
+                            }
+                        }
+
+                        monthlyBudget.setText("Monthly Budget : " + String.valueOf(budget));
+                        amountRemaining.setText("Amount Remaining : " + String.valueOf(budget - spent));
+                        amountSpent.setText("Amount Spent : " + String.valueOf(spent));
+                    }
+                });
+            }
+        });
+
+
+    }
 
     @Nullable
     @Override
@@ -237,6 +340,6 @@ public class MonthlyViewFragment extends Fragment {
     public void onStart() {
         super.onStart();
         setUpChartOverview();
-
+        setUpStats();
     }
 }

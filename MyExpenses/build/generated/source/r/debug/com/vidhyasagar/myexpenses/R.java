@@ -3134,7 +3134,6 @@ containing a value of this type.
         public static final int bevel=0x7f0e0045;
         public static final int bottom=0x7f0e0029;
         public static final int bottom_wrapper=0x7f0e00b2;
-        public static final int budgetAmount=0x7f0e008a;
         public static final int budgetMonth=0x7f0e00b7;
         public static final int budgetSwipeLayout=0x7f0e00b1;
         public static final int butt=0x7f0e0042;
@@ -3240,6 +3239,7 @@ containing a value of this type.
         public static final int mini=0x7f0e0034;
         public static final int miter=0x7f0e0046;
         public static final int monthIcon=0x7f0e00b6;
+        public static final int monthlyBudget=0x7f0e008a;
         public static final int multiply=0x7f0e000f;
         public static final int nav_item_budget=0x7f0e00de;
         public static final int nav_item_calendar=0x7f0e00dd;

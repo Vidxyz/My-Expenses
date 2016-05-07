@@ -74,7 +74,7 @@
                 android:text="Budget: $50"
                 android:textSize="20sp"
                 android:layout_weight="2.00"
-                android:id="@+id/budgetAmount"
+                android:id="@+id/monthlyBudget"
                 android:scrollIndicators="left"
                 android:layout_marginLeft="30dp"
                 android:textColor="#1e1b1b"

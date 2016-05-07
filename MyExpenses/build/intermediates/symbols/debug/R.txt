@@ -812,7 +812,6 @@ int id beginning 0x7f0e0035
 int id bevel 0x7f0e0045
 int id bottom 0x7f0e0029
 int id bottom_wrapper 0x7f0e00b2
-int id budgetAmount 0x7f0e008a
 int id budgetMonth 0x7f0e00b7
 int id budgetSwipeLayout 0x7f0e00b1
 int id butt 0x7f0e0042
@@ -918,6 +917,7 @@ int id minMax 0x7f0e00c4
 int id mini 0x7f0e0034
 int id miter 0x7f0e0046
 int id monthIcon 0x7f0e00b6
+int id monthlyBudget 0x7f0e008a
 int id multiply 0x7f0e000f
 int id nav_item_budget 0x7f0e00de
 int id nav_item_calendar 0x7f0e00dd

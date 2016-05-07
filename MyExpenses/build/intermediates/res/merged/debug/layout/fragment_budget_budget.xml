@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:clickable="true"
     android:id="@id/relativeLayout"
     android:layout_height="match_parent">
 
@@ -10,7 +11,7 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:maxLength="5"
-        android:id="@+id/budgetAmount"
+        android:id="@+id/monthlyBudget"
         android:layout_marginTop="25dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/amountSeekBar"
@@ -20,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/budgetAmount"
+        android:layout_below="@id/monthlyBudget"
         android:id="@+id/seekBarLabel"
         android:text="Set budget amount :"
         android:layout_marginLeft="25dp"
@@ -49,9 +50,9 @@
         android:id="@+id/perMonth"
         android:textColor="#141111"
         android:textSize="30sp"
-        android:layout_alignBaseline="@+id/budgetAmount"
-        android:layout_alignBottom="@+id/budgetAmount"
-        android:layout_toEndOf="@+id/budgetAmount" />
+        android:layout_alignBaseline="@+id/monthlyBudget"
+        android:layout_alignBottom="@+id/monthlyBudget"
+        android:layout_toEndOf="@+id/monthlyBudget" />
 
     <TextView
         android:layout_width="wrap_content"

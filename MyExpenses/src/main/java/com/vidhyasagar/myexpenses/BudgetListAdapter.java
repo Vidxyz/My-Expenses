@@ -3,7 +3,6 @@ package com.vidhyasagar.myexpenses;
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import com.daimajia.swipe.adapters.ArraySwipeAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by Vidhyasagar on 5/6/2016.
@@ -52,7 +50,7 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
             }
 
             TextView budgetMonth = (TextView) row.findViewById(R.id.budgetMonth);
-            TextView budgetAmount = (TextView) row.findViewById(R.id.budgetAmount);
+            TextView budgetAmount = (TextView) row.findViewById(R.id.monthlyBudget);
             ImageView budgetIcon = (ImageView) row.findViewById(R.id.monthIcon);
 
             if(budgetAmount != null && budgetMonth != null && budgetIcon != null) {

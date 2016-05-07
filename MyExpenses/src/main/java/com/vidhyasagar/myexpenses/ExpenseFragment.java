@@ -180,6 +180,7 @@ public class ExpenseFragment extends Fragment {
         //Form time format later on when the save button is clicked
         final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
         final SimpleDateFormat dataFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm aa");
+        final SimpleDateFormat monthFormat = new SimpleDateFormat("MMM");
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
@@ -237,6 +238,7 @@ public class ExpenseFragment extends Fragment {
                     ParseObject newExpense = new ParseObject("Expenses");
                     newExpense.put("amount", Float.parseFloat(expAmount));
                     newExpense.put("time", c.getTime());
+                    newExpense.put("month", monthFormat.format(c.getTime()));
                     newExpense.put("category", categorySpinner.getSelectedItem().toString());
                     newExpense.put("method", methodSpinner.getSelectedItem().toString());
                     newExpense.put("location", location.getText().toString());

@@ -1,7 +1,6 @@
 package com.vidhyasagar.myexpenses;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -86,7 +85,7 @@ public class SetBudgetFragment extends Fragment {
         super.onStart();
         perWeek = (TextView) getActivity().findViewById(R.id.perWeek);
         perYear = (TextView) getActivity().findViewById(R.id.perYear);
-        budgetAmount = (EditText) getActivity().findViewById(R.id.budgetAmount);
+        budgetAmount = (EditText) getActivity().findViewById(R.id.monthlyBudget);
         amountSeekBar = (SeekBar) getActivity().findViewById(R.id.amountSeekBar);
 
         //CANCEL AND SAVE BUTTONS
@@ -95,12 +94,29 @@ public class SetBudgetFragment extends Fragment {
 
 
         relativeLayout = (RelativeLayout) getActivity().findViewById(R.id.relativeLayout);
+
         relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("applog", "Keyboard should go down now");
+                disableKeyboard(v);
+            }
+        });
+
+        perYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 disableKeyboard(v);
             }
         });
+
+        perWeek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                disableKeyboard(v);
+            }
+        });
+
 
         addMonths();
 
@@ -124,11 +140,10 @@ public class SetBudgetFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(!s.toString().equals("")) {
+                if (!s.toString().equals("")) {
                     perWeek.setText(String.valueOf(Float.parseFloat(s.toString()) / 4) + " / Week");
                     perYear.setText(String.valueOf(Float.parseFloat(s.toString()) * 12) + " / Year");
-                }
-                else  {
+                } else {
                     perWeek.setText("0 / Week");
                     perYear.setText("0 / Year");
                 }
@@ -197,8 +212,21 @@ public class SetBudgetFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                Log.i("applog", "stopped tracking touch");
             }
         });
+
+
+        budgetAmount.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    disableKeyboard(v);
+                }
+                return false;
+            }
+        });
+
 
 
         //SAVE AND CANCEL BUTTONS
@@ -217,14 +245,13 @@ public class SetBudgetFragment extends Fragment {
                 query.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
-                        if(e != null) {
+                        if (e != null) {
                             e.printStackTrace();
-                        }
-                        else {
-                            if(objects.size() == 0) {
+                        } else {
+                            if (objects.size() == 0) {
                                 //NO object found, must create it
                                 Log.i("applog", "Creating new objects");
-                                for(String item : listItems) {
+                                for (String item : listItems) {
                                     ParseObject newObject = new ParseObject("Budgets");
                                     newObject.put("amount", Float.parseFloat(budgetAmount.getText().toString()));
                                     newObject.put("username", ParseUser.getCurrentUser().getUsername());
@@ -232,10 +259,9 @@ public class SetBudgetFragment extends Fragment {
                                     newObject.saveInBackground(new SaveCallback() {
                                         @Override
                                         public void done(ParseException e) {
-                                            if(e != null) {
+                                            if (e != null) {
                                                 e.printStackTrace();
-                                            }
-                                            else {
+                                            } else {
                                                 Log.i("applog", "budget object added");
                                             }
                                         }
@@ -244,12 +270,11 @@ public class SetBudgetFragment extends Fragment {
 
                                 Toast.makeText(getContext(), "Budget Added!", Toast.LENGTH_SHORT).show();
                                 getActivity().getSupportFragmentManager().popBackStackImmediate();
-                            }
-                            else {
-                                for(ParseObject object : objects) {
+                            } else {
+                                for (ParseObject object : objects) {
                                     object.deleteInBackground();
                                 }
-                                for(String item : listItems) {
+                                for (String item : listItems) {
                                     ParseObject newObject = new ParseObject("Budgets");
                                     newObject.put("amount", Float.parseFloat(budgetAmount.getText().toString()));
                                     newObject.put("username", ParseUser.getCurrentUser().getUsername());
@@ -266,10 +291,10 @@ public class SetBudgetFragment extends Fragment {
                                     });
                                 }
                             }
-                                Toast.makeText(getActivity(), "Budget Updated!", Toast.LENGTH_SHORT).show();
-                                getActivity().getSupportFragmentManager().popBackStackImmediate();
-                            }
+                            Toast.makeText(getActivity(), "Budget Updated!", Toast.LENGTH_SHORT).show();
+                            getActivity().getSupportFragmentManager().popBackStackImmediate();
                         }
+                    }
                 });
             }
         });

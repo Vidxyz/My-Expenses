@@ -32,11 +32,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Monthly Budget : "
-                    android:id="@+id/budgetAmount"
+                    android:id="@+id/monthlyBudget"
                     android:layout_below="@id/chart"
                     android:layout_marginBottom="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="35dp" />
+                    android:layout_marginTop="35dp"
+                    android:textSize="17sp"
+                    android:textColor="#292828" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,9 +46,11 @@
                     android:layout_marginTop="0dp"
                     android:text="Amount Remaining : "
                     android:id="@+id/amountRemaining"
-                    android:layout_below="@+id/budgetAmount"
+                    android:layout_below="@+id/monthlyBudget"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_marginBottom="20dp"
+                    android:textSize="17sp"
+                    android:textColor="#292828" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -55,7 +59,9 @@
                     android:text="Amount Spent : "
                     android:id="@+id/amountSpent"
                     android:layout_below="@+id/amountRemaining"
-                    android:layout_marginLeft="10dp" />
+                    android:layout_marginLeft="10dp"
+                    android:textSize="17sp"
+                    android:textColor="#292828" />
 
             </RelativeLayout>
 

@@ -44,6 +44,9 @@ public class DailyViewFragment extends Fragment {
     FragmentTransaction fragmentTransaction;
     Calendar c;
     TextView todaysDate;
+    TextView dailyExpense;
+    TextView weeklyLimit;
+    TextView topExpense;
 
 
     class MyAdapter extends ArrayAdapter {
@@ -84,7 +87,7 @@ public class DailyViewFragment extends Fragment {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
                 expensesList = (ListView) getActivity().findViewById(R.id.expensesList);
-                if(objects.size() != 0) {
+                if (objects.size() != 0) {
                     for (ParseObject object : objects) {
                         String date = df.format(object.getDate("time"));
                         String currentDate = df.format(c.getTime());
@@ -100,14 +103,16 @@ public class DailyViewFragment extends Fragment {
                     expenseListAdapter.notifyDataSetChanged();
                 }
 
-                if(objects.size() == 0 || expenses.size() == 0) {
-                    Log.i("applog", "No objects found for this day");
+                if (objects.size() == 0 || expenses.size() == 0) {
                     ArrayList<String> temp = new ArrayList<String>();
                     temp.add("Error message");
                     myAdapter = new MyAdapter(getContext(), R.layout.layout_list_unavailable, temp);
                     expensesList.setAdapter(myAdapter);
                     myAdapter.notifyDataSetChanged();
                 }
+
+                setUpStats(dateToCompare);
+
             }
         });
 
@@ -131,6 +136,94 @@ public class DailyViewFragment extends Fragment {
         String formattedDate = df.format(c.getTime());
         todaysDate.setText(formattedDate);
         setUpExpensesListView(formattedDate);
+    }
+
+    public String findMonth (String theDate) {
+        theDate = theDate.substring(3, 6);
+        String toReturn = "";
+        if(theDate.equals("Jan")) {
+            toReturn =  "January";
+        }
+        else if(theDate.equals("Feb")) {
+            toReturn =  "February";
+        }
+        else if(theDate.equals("Mar")) {
+            toReturn =  "March";
+        }
+        else if(theDate.equals("Apr")) {
+            toReturn =  "April";
+        }
+        else if(theDate.equals("May")) {
+            toReturn =  "May";
+        }
+        else if(theDate.equals("Jun")) {
+            toReturn =  "June";
+        }
+        else if(theDate.equals("Jul")) {
+            toReturn =  "July";
+        }
+        else if(theDate.equals("Aug")) {
+            toReturn =  "August";
+        }
+        else if(theDate.equals("Sep")) {
+            toReturn =  "September";
+        }
+        else if(theDate.equals("Oct")) {
+            toReturn =  "October";
+        }
+        else if(theDate.equals("Nov")) {
+            toReturn =  "November";
+        }
+        else if(theDate.equals("Dec")) {
+            toReturn =  "December";
+        }
+        return toReturn;
+    }
+
+    public void setUpStats(String theDate) {
+//        Log.i("applog", "setting up stats again");
+        topExpense = (TextView) getActivity().findViewById(R.id.topExpense);
+        weeklyLimit = (TextView) getActivity().findViewById(R.id.weeklyLimit);
+        dailyExpense = (TextView) getActivity().findViewById(R.id.dailyExpense);
+
+        float topExpenseSum = 0;
+        float topMostExpense = 0;
+
+
+        for(ExpenseListItem item : this.expenses) {
+            if(item.expenseAmount > topMostExpense) {
+                topMostExpense = item.expenseAmount;
+            }
+            topExpenseSum = topExpenseSum + item.expenseAmount;
+        }
+        dailyExpense.setText("Daily Expense : $ " + String.valueOf(topExpenseSum));
+        topExpense.setText("Top Expense : $ " + String.valueOf(topMostExpense));
+
+
+        String theMonth = findMonth(theDate);
+        Log.i("applog", "The month is " + theMonth);
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Budgets");
+        query.whereEqualTo("month", theMonth);
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(e != null) {
+                    e.printStackTrace();
+                }
+                else {
+                    if(objects.size() == 0) {
+                        Log.i("applog", "no reuslts found for query");
+                    }
+                    for(ParseObject object : objects) {
+                        float temp = Float.parseFloat(object.getNumber("amount").toString());
+                        temp = temp / 4;
+                        weeklyLimit.setText("Weekly Limit : " +  String.valueOf(temp));
+                    }
+                }
+            }
+        });
+
     }
 
 
@@ -182,6 +275,7 @@ public class DailyViewFragment extends Fragment {
         String formattedDate = df.format(c.getTime());
 
         setUpExpensesListView(formattedDate);
+//        setUpStats();
     }
 
     @Override
