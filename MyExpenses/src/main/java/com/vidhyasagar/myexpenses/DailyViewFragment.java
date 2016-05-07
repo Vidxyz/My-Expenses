@@ -218,7 +218,7 @@ public class DailyViewFragment extends Fragment {
                     for(ParseObject object : objects) {
                         float temp = Float.parseFloat(object.getNumber("amount").toString());
                         temp = temp / 4;
-                        weeklyLimit.setText("Weekly Limit : " +  String.valueOf(temp));
+                        weeklyLimit.setText("Weekly Limit : $ " +  String.valueOf(temp));
                     }
                 }
             }

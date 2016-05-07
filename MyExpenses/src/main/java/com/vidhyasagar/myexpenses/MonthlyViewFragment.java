@@ -308,9 +308,9 @@ public class MonthlyViewFragment extends Fragment {
                             }
                         }
 
-                        monthlyBudget.setText("Monthly Budget : " + String.valueOf(budget));
-                        amountRemaining.setText("Amount Remaining : " + String.valueOf(budget - spent));
-                        amountSpent.setText("Amount Spent : " + String.valueOf(spent));
+                        monthlyBudget.setText("Monthly Budget : $ " + String.valueOf(budget));
+                        amountRemaining.setText("Amount Remaining : $ " + String.valueOf(budget - spent));
+                        amountSpent.setText("Amount Spent : $ " + String.valueOf(spent));
                     }
                 });
             }
