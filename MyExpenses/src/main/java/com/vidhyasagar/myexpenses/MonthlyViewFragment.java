@@ -308,9 +308,9 @@ public class MonthlyViewFragment extends Fragment {
                             }
                         }
 
-                        monthlyBudget.setText("Monthly Budget : $ " + String.valueOf(budget));
-                        amountRemaining.setText("Amount Remaining : $ " + String.valueOf(budget - spent));
-                        amountSpent.setText("Amount Spent : $ " + String.valueOf(spent));
+                        monthlyBudget.setText("Monthly Budget : $ " + String.valueOf(Math.round(budget * 100.00)/100.00));
+                        amountRemaining.setText("Amount Remaining : $ " + String.valueOf(Math.round((budget - spent)* 100.00)/100.00));
+                        amountSpent.setText("Amount Spent : $ " + String.valueOf(Math.round(spent * 100.00)/100.00));
                     }
                 });
             }
@@ -323,7 +323,6 @@ public class MonthlyViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentManager = getActivity().getSupportFragmentManager();
-        Log.i("applog", "Monthly onCreateView executed");
         c = Calendar.getInstance();
         View x = inflater.inflate(R.layout.fragment_monthly_view,null);
         FloatingActionButton fab = (FloatingActionButton) x.findViewById(R.id.addDiaryButton);

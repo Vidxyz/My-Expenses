@@ -64,14 +64,14 @@
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MonthlyViewFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="312" column="62" selection-start-line="312" selection-start-column="62" selection-end-line="312" selection-end-column="62" />
+              <caret line="310" column="121" selection-start-line="310" selection-start-column="121" selection-end-line="310" selection-end-column="121" />
               <folding>
                 <element signature="e#11156#11169#0" expanded="true" />
                 <element signature="e#11385#11398#0" expanded="true" />
-                <element signature="e#11569#13068#0" expanded="true" />
-                <element signature="e#12198#13042#0" expanded="true" />
-                <element signature="e#13041#13042#0" expanded="true" />
-                <element signature="e#13067#13068#0" expanded="true" />
+                <element signature="e#11569#13153#0" expanded="true" />
+                <element signature="e#12198#13127#0" expanded="true" />
+                <element signature="e#13126#13127#0" expanded="true" />
+                <element signature="e#13152#13153#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,10 +80,10 @@
       <file leaf-file-name="DailyViewFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3569079">
-              <caret line="209" column="75" selection-start-line="209" selection-start-column="75" selection-end-line="209" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.30098686">
+              <caret line="205" column="81" selection-start-line="205" selection-start-column="81" selection-end-line="205" selection-end-column="81" />
               <folding>
-                <element signature="e#7386#7399#0" expanded="true" />
+                <element signature="e#7389#7402#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2664,24 +2664,24 @@
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/MonthlyViewFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="312" column="62" selection-start-line="312" selection-start-column="62" selection-end-line="312" selection-end-column="62" />
+          <caret line="310" column="121" selection-start-line="310" selection-start-column="121" selection-end-line="310" selection-end-column="121" />
           <folding>
             <element signature="e#11156#11169#0" expanded="true" />
             <element signature="e#11385#11398#0" expanded="true" />
-            <element signature="e#11569#13068#0" expanded="true" />
-            <element signature="e#12198#13042#0" expanded="true" />
-            <element signature="e#13041#13042#0" expanded="true" />
-            <element signature="e#13067#13068#0" expanded="true" />
+            <element signature="e#11569#13153#0" expanded="true" />
+            <element signature="e#12198#13127#0" expanded="true" />
+            <element signature="e#13126#13127#0" expanded="true" />
+            <element signature="e#13152#13153#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyExpenses/src/main/java/com/vidhyasagar/myexpenses/DailyViewFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3569079">
-          <caret line="209" column="75" selection-start-line="209" selection-start-column="75" selection-end-line="209" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.30098686">
+          <caret line="205" column="81" selection-start-line="205" selection-start-column="81" selection-end-line="205" selection-end-column="81" />
           <folding>
-            <element signature="e#7386#7399#0" expanded="true" />
+            <element signature="e#7389#7402#0" expanded="true" />
           </folding>
         </state>
       </provider>

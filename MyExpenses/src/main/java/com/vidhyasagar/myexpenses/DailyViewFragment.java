@@ -196,12 +196,11 @@ public class DailyViewFragment extends Fragment {
             }
             topExpenseSum = topExpenseSum + item.expenseAmount;
         }
-        dailyExpense.setText("Daily Expense : $ " + String.valueOf(topExpenseSum));
-        topExpense.setText("Top Expense : $ " + String.valueOf(topMostExpense));
+        dailyExpense.setText("Daily Expense : $ " + String.valueOf(Math.round(topExpenseSum * 100.00)/100.00));
+        topExpense.setText("Top Expense : $ " + String.valueOf(Math.round(topMostExpense * 100.00)/100.00));
 
 
         String theMonth = findMonth(theDate);
-        Log.i("applog", "The month is " + theMonth);
         ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Budgets");
         query.whereEqualTo("month", theMonth);
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
@@ -218,7 +217,7 @@ public class DailyViewFragment extends Fragment {
                     for(ParseObject object : objects) {
                         float temp = Float.parseFloat(object.getNumber("amount").toString());
                         temp = temp / 4;
-                        weeklyLimit.setText("Weekly Limit : $ " +  String.valueOf(temp));
+                        weeklyLimit.setText("Weekly Limit : $ " +  String.valueOf(Math.round(temp * 100.00)/100.00));
                     }
                 }
             }
