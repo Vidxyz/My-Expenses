@@ -1,17 +1,27 @@
 package com.vidhyasagar.myexpenses;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.swipe.adapters.ArraySwipeAdapter;
+import com.parse.DeleteCallback;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Vidhyasagar on 5/6/2016.
@@ -31,6 +41,31 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
         this.resource = resource;
         this.budgets = budgets;
         this.fragmentManager = fragmentManager;
+    }
+
+    public void setupEditEntry(View view, final int position) {
+
+        ImageView editButton = (ImageView) view.findViewById(R.id.listEditButton);
+        editButton.setClickable(true);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Open up dialog box to fill in budget shit
+            }
+        });
+    }
+
+
+
+    public void setupDeleteEntry(View view, final int position) {
+        ImageView deleteButton = (ImageView) view.findViewById(R.id.listDeleteButton);
+        deleteButton.setClickable(true);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Change budget pertaining to this month to UNSET
+            }
+        });
     }
 
 
@@ -64,6 +99,8 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
                 budgetIcon.setImageResource(R.drawable.ic_receive);
             }
 
+        setupEditEntry(row, position);
+        setupDeleteEntry(row, position);
 
         return row;
 
