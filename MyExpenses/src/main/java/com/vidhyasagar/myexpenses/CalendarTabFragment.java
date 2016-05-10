@@ -1,8 +1,12 @@
 package com.vidhyasagar.myexpenses;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +25,15 @@ public class CalendarTabFragment extends Fragment{
     CalendarView calendarView;
     Button jumpButton;
     String dateSelected;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+    SharedPreferences sharedPreferences;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+        fragmentManager = getActivity().getSupportFragmentManager();
         return  inflater.inflate(R.layout.fragment_view_calendar,null);
     }
 
@@ -33,7 +41,7 @@ public class CalendarTabFragment extends Fragment{
     public void onStart() {
         super.onStart();
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
         dateSelected = null;
 
         jumpButton = (Button) getActivity().findViewById(R.id.jumpButton);
@@ -46,7 +54,7 @@ public class CalendarTabFragment extends Fragment{
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
 //                Log.i("applog", dateString);
-                dateSelected = String.valueOf(dayOfMonth) + "/" + String.valueOf(month) + "/" + String.valueOf(year);
+                dateSelected = dateFormat.format(view.getDate());
                 Log.i("applog - date selected", dateSelected);
             }
         });
@@ -55,7 +63,12 @@ public class CalendarTabFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Log.i("applog", dateSelected);
-                Log.i("applog", "Going to this date's list view");
+                fragmentTransaction = fragmentManager.beginTransaction();
+                SharedPreferences sharedPreferences = getContext().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
+                sharedPreferences.edit().putString("customDate", dateSelected).apply();
+                fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                        android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                fragmentTransaction.replace(R.id.containerView,new DashboardFragment()).addToBackStack("daily").commit();
             }
         });
     }

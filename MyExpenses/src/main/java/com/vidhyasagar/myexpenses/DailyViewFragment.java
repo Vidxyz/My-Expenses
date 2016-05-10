@@ -2,6 +2,7 @@ package com.vidhyasagar.myexpenses;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -42,11 +43,14 @@ public class DailyViewFragment extends Fragment {
     static ArrayList<ExpenseListItem> expenses;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    SharedPreferences sharedPreferences;
     Calendar c;
     TextView todaysDate;
     TextView dailyExpense;
     TextView weeklyLimit;
     TextView topExpense;
+    Boolean hasArguments;
+    String eDate;
 
 
     class MyAdapter extends ArrayAdapter {
@@ -71,7 +75,7 @@ public class DailyViewFragment extends Fragment {
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                 android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        fragmentTransaction.replace(R.id.containerView,new DiaryFragment()).addToBackStack("daily").commit();
+        fragmentTransaction.replace(R.id.containerView,new DiaryFragment()).addToBackStack("diary").commit();
     }
 
     public void setUpExpensesListView(final String dateToCompare) {
@@ -120,22 +124,51 @@ public class DailyViewFragment extends Fragment {
     }
 
     public void previousDate(View view) {
-        c.setTime(c.getTime());
-        c.add(Calendar.DATE, -1);
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c.getTime());
-        todaysDate.setText(formattedDate);
-        setUpExpensesListView(formattedDate);
-
+        if(!hasArguments) {
+            c.setTime(c.getTime());
+            c.add(Calendar.DATE, -1);
+            String formattedDate = df.format(c.getTime());
+            todaysDate.setText(formattedDate);
+            setUpExpensesListView(formattedDate);
+        }
+        else {
+            try {
+                c.setTime(df.parse(eDate));
+                c.add(Calendar.DATE, -1);
+                String formattedDate = df.format(c.getTime());
+                todaysDate.setText(formattedDate);
+                setUpExpensesListView(formattedDate);
+                hasArguments = false;
+            } catch (java.text.ParseException e) {
+                e.printStackTrace();
+                Log.i("applog", "exception occured");
+            }
+        }
     }
 
     public void nextDate(View view) {
-        c.setTime(c.getTime());
-        c.add(Calendar.DATE, 1);
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c.getTime());
-        todaysDate.setText(formattedDate);
-        setUpExpensesListView(formattedDate);
+        if(!hasArguments) {
+            c.setTime(c.getTime());
+            c.add(Calendar.DATE, 1);
+            String formattedDate = df.format(c.getTime());
+            todaysDate.setText(formattedDate);
+            setUpExpensesListView(formattedDate);
+        }
+        else {
+            try {
+                c.setTime(df.parse(eDate));
+                c.add(Calendar.DATE, 1);
+                String formattedDate = df.format(c.getTime());
+                todaysDate.setText(formattedDate);
+                setUpExpensesListView(formattedDate);
+                hasArguments = false;
+            } catch (java.text.ParseException e) {
+                e.printStackTrace();
+                Log.i("applog", "exception occured");
+            }
+        }
     }
 
     public String findMonth (String theDate) {
@@ -229,6 +262,19 @@ public class DailyViewFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        sharedPreferences = getActivity().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
+        eDate = sharedPreferences.getString("customDate", "");
+
+        if(eDate.equals("")) {
+            hasArguments = false;
+        }
+        else {
+            Log.i("applog", "this has arguments");
+            hasArguments = true;
+            sharedPreferences.edit().clear().commit();
+        }
+
         fragmentManager = getActivity().getSupportFragmentManager();
         View x =  inflater.inflate(R.layout.fragment_daily_view,null);
         FloatingActionButton fab = (FloatingActionButton) x.findViewById(R.id.addDiaryButton);
@@ -241,9 +287,14 @@ public class DailyViewFragment extends Fragment {
         todaysDate = (TextView) x.findViewById(R.id.todaysDate);
         c = Calendar.getInstance();
 
-        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c.getTime());
-        todaysDate.setText(formattedDate);
+        if(!hasArguments) {
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            String formattedDate = df.format(c.getTime());
+            todaysDate.setText(formattedDate);
+        }
+        else {
+            todaysDate.setText(eDate);
+        }
 
         ImageView previousButton = (ImageView) x.findViewById(R.id.previousButton);
         ImageView nextButton = (ImageView) x.findViewById(R.id.nextButton);
@@ -264,6 +315,7 @@ public class DailyViewFragment extends Fragment {
 
         //Adding to listview
         expenses = new ArrayList<>();
+
         return x;
     }
 
@@ -271,17 +323,26 @@ public class DailyViewFragment extends Fragment {
     public void onStart() {
         super.onStart();
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c.getTime());
-
-        setUpExpensesListView(formattedDate);
+        if(!hasArguments) {
+            String formattedDate = df.format(c.getTime());
+            setUpExpensesListView(formattedDate);
+        }
+        else {
+            setUpExpensesListView(eDate);
+        }
 //        setUpStats();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c.getTime());
-        todaysDate.setText(formattedDate);
+        if(!hasArguments) {
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            String formattedDate = df.format(c.getTime());
+            todaysDate.setText(formattedDate);
+        }
+        else {
+            todaysDate.setText(eDate);
+        }
     }
 }
