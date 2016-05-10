@@ -6,11 +6,16 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +42,12 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
     FragmentTransaction fragmentTransaction;
 
 
+    //Edit entry variables
+//    TextView perYear;
+//    TextView perWeek;
+//    EditText editText;
+//    SeekBar seekBar;
+
     public BudgetListAdapter(Context context, int resource, ArrayList<BudgetObject> budgets, FragmentManager fragmentManager) {
         super(context, resource, budgets);
         this.context = context;
@@ -46,6 +57,55 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
     }
 
     public void setupEditEntry(View view, final int position) {
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View dialogBox = inflater.inflate(R.layout.layout_dialog_box, null);
+
+        final TextView perYear = (TextView) dialogBox.findViewById(R.id.perYear);
+        final TextView perWeek = (TextView) dialogBox.findViewById(R.id.perWeek);
+        final EditText editText = (EditText) dialogBox.findViewById(R.id.monthlyBudget);
+        final SeekBar seekBar = (SeekBar) dialogBox.findViewById(R.id.amountSeekBar);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                Log.i("applog", "text listener working");
+                if (!s.toString().equals("")) {
+                    perWeek.setText(String.valueOf(Float.parseFloat(s.toString()) / 4) + " / Week");
+                    perYear.setText(String.valueOf(Float.parseFloat(s.toString()) * 12) + " / Year");
+                } else {
+                    perWeek.setText("0 / Week");
+                    perYear.setText("0 / Year");
+                }
+            }
+        });
+
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Log.i("applog", "listener working");
+                editText.setText(String.valueOf(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         ImageView editButton = (ImageView) view.findViewById(R.id.listEditButton);
         editButton.setClickable(true);
@@ -55,10 +115,16 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(getContext())
                         .setTitle("Edit Budget for the month of " + budgets.get(position).getMonth())
                         .setIcon(R.drawable.ic_edit)
+                        .setView(dialogBox)
                         .setPositiveButton("Save", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                budgets.get(position).setMonth("PIKACHU");
+                                ParseQuery<ParseObject> query = new ParseQuery<>("Budgets");
+                                query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                                query.whereEqualTo("month", budgets.get(position).getMonth());
+                                //....
+                                //...work more on this
+                                budgets.get(position).setAmount(editText.getText().toString());
                                 notifyDataSetChanged();
                             }
                         })

@@ -57,7 +57,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$ 49,236 / Year"
+        android:text="$  / Year"
         android:id="@+id/perYear"
         android:layout_below="@+id/amountSeekBar"
         android:layout_alignStart="@+id/amountSeekBar"
@@ -68,7 +68,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$ 125 / Week"
+        android:text="$  / Week"
         android:id="@+id/perWeek"
         android:textSize="25sp"
         android:textColor="#f03434"
