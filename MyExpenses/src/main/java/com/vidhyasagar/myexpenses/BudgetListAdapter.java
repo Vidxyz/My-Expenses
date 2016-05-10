@@ -1,6 +1,8 @@
 package com.vidhyasagar.myexpenses;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -50,7 +52,19 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Open up dialog box to fill in budget shit
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext())
+                        .setTitle("Edit Budget for the month of " + budgets.get(position).getMonth())
+                        .setIcon(R.drawable.ic_edit)
+                        .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                budgets.get(position).setMonth("PIKACHU");
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton("Cancel", null);
+
+                dialog.show();
             }
         });
     }
@@ -64,6 +78,20 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
             @Override
             public void onClick(View v) {
                 //Change budget pertaining to this month to UNSET
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext())
+                        .setTitle("Confirmation required")
+                        .setIcon(R.drawable.ic_edit)
+                        .setMessage("Are you sure you want to remove the set budget for the month of " + budgets.get(position).getMonth() )
+                        .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                budgets.get(position).setAmount("UNSET");
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton("Cancel", null);
+
+                dialog.show();
             }
         });
     }
