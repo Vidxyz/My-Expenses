@@ -76,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView,new BudgetFragment()).addToBackStack("budget").commit();
                 }
+                else if(menuItem.getItemId() == R.id.nav_item_calendar) {
+                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+                    xfragmentTransaction.replace(R.id.containerView,new CalendarFragment()).addToBackStack("calendar").commit();
+                }
 
 
                 return false;

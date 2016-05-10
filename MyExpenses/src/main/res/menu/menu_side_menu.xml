@@ -22,6 +22,10 @@
             <item android:title="Progress"
                 android:id="@+id/nav_item_progress"
                 android:icon="@drawable/ic_calendar"/>
+
+            <item android:title="Transfer"
+                android:id="@+id/nav_item_transfer"
+                android:icon="@drawable/ic_arrow_vector"/>
         </menu>
     </item>
 
@@ -34,9 +38,6 @@
 
             <item android:title="Settings"
                 android:icon="@android:drawable/ic_delete"/>
-
-            <item android:title="Help"
-                android:icon="@android:drawable/ic_lock_power_off"/>
 
             <item android:title="Logout"
                 android:icon="@android:drawable/ic_lock_power_off"

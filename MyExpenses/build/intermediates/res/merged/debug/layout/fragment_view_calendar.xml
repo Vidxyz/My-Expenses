@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp"
+        android:textColor="#323232"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center" />
+
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:maxDate="31/12/2020"
+        android:minDate="01/01/2000"
+        android:id="@+id/calendarView"
+        android:selectedWeekBackgroundColor="@color/green"
+        android:layout_marginTop="20dp"
+        android:showWeekNumber="false"
+        android:background="#d9d9d9" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jump to date"
+        android:id="@+id/jumpButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@color/red"
+        android:textColor="@color/white" />
+</LinearLayout>
