@@ -72,6 +72,7 @@ public class MonthlyViewFragment extends Fragment {
     float budget;
 
     public void initializeMonths() {
+        monthlySpendings = new HashMap<>();
         months = new ArrayList<>();
         monthHash = new HashMap<>();
         months.add("January");
@@ -123,23 +124,29 @@ public class MonthlyViewFragment extends Fragment {
         }
     }
 
-    public void showPopUpBreakDownDialog(Entry e) {
+    public void showPopUpBreakDownDialog(final Entry e) {
         initializeMonths();
-        final Boolean isNewMonth = false;
-
-        String theMonth = c.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.US);
+        ListView breakdownListView = (ListView) getActivity().findViewById(R.id.breakdownList);
+        //Expans on this
+        final ArrayList<DialogListItem> individualSpendings = new ArrayList<>();
+        final SimpleDateFormat df = new SimpleDateFormat("dd/MMM/yyyy");
+        final String theMonth = c.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.US);
+        String tempMonth = null;
         Log.i("applog", "Dialog month is : " + theMonth);
         ParseQuery<ParseObject> query = new ParseQuery<>("Expenses");
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
         if((monthHash.get(theMonth) - 6) < 0) {
             query.whereContainedIn("month", months.subList(0, monthHash.get(theMonth) + 1));
-            Log.i("applog", months.subList(0, monthHash.get(theMonth)+1).toString());
+            Log.i("applog", months.subList(0, monthHash.get(theMonth) + 1).toString());
+            tempMonth = months.get(0);
         }
         else {
             query.whereContainedIn("month", months.subList(monthHash.get(theMonth) - 6, monthHash.get(theMonth)));
             Log.i("applog", months.subList(monthHash.get(theMonth) - 5, monthHash.get(theMonth) + 1).toString());
+            tempMonth = months.get(monthHash.get(theMonth) - 5);
         }
         query.orderByAscending("month");
+        final String finalTempMonth = tempMonth;
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
@@ -148,9 +155,35 @@ public class MonthlyViewFragment extends Fragment {
                         Log.i("applog", "No such query found for the dialog");
                     }
                     else {
-                        for(ParseObject object : objects) {
-                            Log.i("applog", object.get("month").toString());
+                        String newMonth = finalTempMonth;
+                        float monthAmount = 0;
+                        for(int i = 0; i < objects.size(); i++) {
+                            if(newMonth.equals(objects.get(i).getString("month").toString())) {
+                                monthAmount = monthAmount + Float.parseFloat(objects.get(i).getNumber("amount").toString());
+                            }
+                            else { //Change month, save and reset month amount
+                                monthlySpendings.put(newMonth, monthAmount);
+                                newMonth = objects.get(i).getString("month").toString();
+                                monthAmount = 0;
+                                monthAmount = monthAmount + Float.parseFloat(objects.get(i).getNumber("amount").toString());
+                            }
+
+                            if(theMonth.equals(objects.get(i).getString("month").toString())) {
+                                individualSpendings.add(new DialogListItem(
+                                   objects.get(i).getString("location"),
+                                        objects.get(i).getNumber("amount").toString(),
+                                        df.format(objects.get(i).getDate("time")),
+                                        objects.get(i).getString("method").toString()
+                                ));
+                            }
+
                         }
+                        monthlySpendings.put(newMonth, monthAmount);
+                        Log.i("applog", "Hashmap is " + monthlySpendings.toString());
+                        Log.i("applog", "Arraylist is  " + individualSpendings.toString());
+                        //Values now ready for Line Graph
+                        //ArrayList of DialogListItems now ready for being put into the main list
+
                     }
                 }
                 else {
