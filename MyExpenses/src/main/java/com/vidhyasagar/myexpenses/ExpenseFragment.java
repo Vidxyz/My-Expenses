@@ -53,7 +53,7 @@ public class ExpenseFragment extends Fragment {
     Spinner methodSpinner;
     ArrayAdapter<CharSequence> categoryAdapter;
     ArrayAdapter<CharSequence> methodAdapter;
-    Boolean hasArguments = false;
+    boolean hasArguments = false;
     SharedPreferences sharedPreferences;
 
     String expAmount;
@@ -109,8 +109,11 @@ public class ExpenseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
+        c = Calendar.getInstance();
         sharedPreferences = getActivity().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
         String eLocation = sharedPreferences.getString("location", "");
+        String theDate = sharedPreferences.getString("theDate", "err:noDateFound");
+        sharedPreferences.edit().remove("theDate").commit();
 
         if(eLocation.equals("")) {
             hasArguments = false;
@@ -118,6 +121,7 @@ public class ExpenseFragment extends Fragment {
         else {
             hasArguments = true;
         }
+
 
         final View x = inflater.inflate(R.layout.fragment_diary_expense,null);
 
@@ -128,6 +132,7 @@ public class ExpenseFragment extends Fragment {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sharedPreferences.edit().clear().commit();
                 getActivity().getSupportFragmentManager().popBackStackImmediate();
             }
         });
@@ -175,7 +180,6 @@ public class ExpenseFragment extends Fragment {
 
         //Date stuff
         todaysDate = (TextView) x.findViewById(R.id.todaysDate);
-        c = Calendar.getInstance();
 
         //Form time format later on when the save button is clicked
         final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
@@ -183,8 +187,10 @@ public class ExpenseFragment extends Fragment {
         final SimpleDateFormat monthFormat = new SimpleDateFormat("MMM");
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c.getTime());
-        todaysDate.setText(formattedDate);
+//        String formattedDate = df.format(c.getTime());
+//        todaysDate.setText(sharedPreferences.getString("theDate", ""));
+//        sharedPreferences.edit().remove("theDate").commit();
+        todaysDate.setText(theDate);
 
         ImageView previousButton = (ImageView) x.findViewById(R.id.previousButton);
         ImageView nextButton = (ImageView) x.findViewById(R.id.nextButton);

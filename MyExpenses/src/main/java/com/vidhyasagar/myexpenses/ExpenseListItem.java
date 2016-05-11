@@ -13,6 +13,7 @@ public class ExpenseListItem {
     public String expenseType;
     public String expenseIcon;
     public float expenseAmount;
+    public Date expenseDate;
 
     public ExpenseListItem(float expenseAmount, String expenseLocation, String expenseTime, String expenseIcon, String expenseType) {
         super();

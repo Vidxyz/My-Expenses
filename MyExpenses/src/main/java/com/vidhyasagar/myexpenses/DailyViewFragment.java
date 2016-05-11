@@ -72,6 +72,8 @@ public class DailyViewFragment extends Fragment {
     }
 
     public void addToDiary(View v) {
+        //Add todays date to shared preferences
+        sharedPreferences.edit().putString("theDate", todaysDate.getText().toString()).apply();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                 android.R.anim.slide_in_left, android.R.anim.slide_out_right);
@@ -82,7 +84,7 @@ public class DailyViewFragment extends Fragment {
 
         expenses.clear();
         final SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
+        final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
 
         ParseQuery<ParseObject> query = new ParseQuery("Expenses");
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
@@ -94,7 +96,6 @@ public class DailyViewFragment extends Fragment {
                 if (objects.size() != 0) {
                     for (ParseObject object : objects) {
                         String date = df.format(object.getDate("time"));
-                        String currentDate = df.format(c.getTime());
                         if (date.equals(dateToCompare)) {
                             ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
                                     object.getString("location"), timeFormat.format(object.getDate("time")),

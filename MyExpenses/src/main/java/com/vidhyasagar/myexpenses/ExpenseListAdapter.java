@@ -26,6 +26,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +43,7 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
     FragmentTransaction fragmentTransaction;
 
     public void setupEditEntry(View view, final int position) {
+        final SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
 
         ImageView editButton = (ImageView) view.findViewById(R.id.listEditButton);
         editButton.setClickable(true);
@@ -54,7 +56,7 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
                 sharedPreferences.edit().putString("category", items.get(position).expenseIcon).apply();
                 sharedPreferences.edit().putString("method", items.get(position).expenseType).apply();
                 sharedPreferences.edit().putFloat("amount", items.get(position).expenseAmount).apply();
-                sharedPreferences.edit().putString("time", items.get(position).expenseTime).apply();
+                sharedPreferences.edit().putString("theDate", df.format(items.get(position).expenseTime)).apply();
 
                 fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                         android.R.anim.slide_in_left, android.R.anim.slide_out_right);
