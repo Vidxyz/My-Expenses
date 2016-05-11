@@ -42,13 +42,6 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
-
-    //Edit entry variables
-//    TextView perYear;
-//    TextView perWeek;
-//    EditText editText;
-//    SeekBar seekBar;
-
     public BudgetListAdapter(Context context, int resource, ArrayList<BudgetObject> budgets, FragmentManager fragmentManager) {
         super(context, resource, budgets);
         this.context = context;
@@ -78,7 +71,6 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Log.i("applog", "text listener working");
                 if (!s.toString().equals("")) {
                     perWeek.setText(String.valueOf(Float.parseFloat(s.toString()) / 4) + " / Week");
                     perYear.setText(String.valueOf(Float.parseFloat(s.toString()) * 12) + " / Year");
@@ -93,7 +85,6 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                Log.i("applog", "listener working");
                 editText.setText(String.valueOf(progress));
             }
 
@@ -145,7 +136,6 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
                                                 });
                                             } else {
                                                 //This means the object exists, and a budget for this month already exists
-                                                Log.i("applog", "QUERY EXISTS BUT CANT DO SHIT ALL");
                                                 for (ParseObject object : objects) {
                                                     object.put("amount", Float.parseFloat(editText.getText().toString()));
                                                     object.saveInBackground(new SaveCallback() {

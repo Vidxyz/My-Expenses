@@ -23,9 +23,6 @@
                 android:id="@+id/nav_item_progress"
                 android:icon="@drawable/ic_calendar"/>
 
-            <item android:title="Transfer"
-                android:id="@+id/nav_item_transfer"
-                android:icon="@drawable/ic_arrow_vector"/>
         </menu>
     </item>
 

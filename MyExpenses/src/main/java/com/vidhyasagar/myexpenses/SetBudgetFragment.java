@@ -40,6 +40,7 @@ import java.util.List;
  */
 public class SetBudgetFragment extends Fragment {
 
+
     SeekBar amountSeekBar;
     EditText budgetAmount;
     TextView perYear, perWeek;
@@ -169,7 +170,6 @@ public class SetBudgetFragment extends Fragment {
                         .setPositiveButton("Save", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-//                                Toast.makeText(getContext(), "Save selected", Toast.LENGTH_LONG).show();
                                 listItems.clear();
                                 SparseBooleanArray selectedMonths = monthList.getCheckedItemPositions();
                                 int monthsPerLine = 0;

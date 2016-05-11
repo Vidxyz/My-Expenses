@@ -1,6 +1,7 @@
 package com.vidhyasagar.myexpenses;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -41,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Vidhyasagar on 4/24/2016.
@@ -50,6 +52,11 @@ public class MonthlyViewFragment extends Fragment {
 
     private String[] xData = { "Food", "Movies", "Women" };
     private String[] categories = {"Food", "Groceries", "Other", "Rent", "Movies", "Alcohol", "Hydro"};
+    private ArrayList<String> months ;
+    private HashMap<String, Integer> monthHash;
+    private HashMap<String, Float> monthlySpendings;
+
+
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     Calendar c;
@@ -63,6 +70,35 @@ public class MonthlyViewFragment extends Fragment {
 
     float spent;
     float budget;
+
+    public void initializeMonths() {
+        months = new ArrayList<>();
+        monthHash = new HashMap<>();
+        months.add("January");
+        monthHash.put("January", 0);
+        months.add("February");
+        monthHash.put("February", 1);
+        months.add("March");
+        monthHash.put("March", 2);
+        months.add("April");
+        monthHash.put("April", 3);
+        months.add("May");
+        monthHash.put("May", 4);
+        months.add("June");
+        monthHash.put("June", 5);
+        months.add("July");
+        monthHash.put("July", 6);
+        months.add("August");
+        monthHash.put("August", 7);
+        months.add("September");
+        monthHash.put("September", 8);
+        months.add("October");
+        monthHash.put("October", 9);
+        months.add("November");
+        monthHash.put("Novmeber", 10);
+        months.add("December");
+        monthHash.put("December", 11);
+    }
 
     public void addToDiary(View v) {
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -87,6 +123,55 @@ public class MonthlyViewFragment extends Fragment {
         }
     }
 
+    public void showPopUpBreakDownDialog(Entry e) {
+        initializeMonths();
+        final Boolean isNewMonth = false;
+
+        String theMonth = c.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.US);
+        Log.i("applog", "Dialog month is : " + theMonth);
+        ParseQuery<ParseObject> query = new ParseQuery<>("Expenses");
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+        if((monthHash.get(theMonth) - 6) < 0) {
+            query.whereContainedIn("month", months.subList(0, monthHash.get(theMonth) + 1));
+            Log.i("applog", months.subList(0, monthHash.get(theMonth)+1).toString());
+        }
+        else {
+            query.whereContainedIn("month", months.subList(monthHash.get(theMonth) - 6, monthHash.get(theMonth)));
+            Log.i("applog", months.subList(monthHash.get(theMonth) - 5, monthHash.get(theMonth) + 1).toString());
+        }
+        query.orderByAscending("month");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(e == null) {
+                    if(objects.size() == 0) {
+                        Log.i("applog", "No such query found for the dialog");
+                    }
+                    else {
+                        for(ParseObject object : objects) {
+                            Log.i("applog", object.get("month").toString());
+                        }
+                    }
+                }
+                else {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View breakdownView = inflater.inflate(R.layout.layout_breakdown_dialog, null);
+        //Show a dialog box here which gives you a breakdown of all spending
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext())
+                .setTitle("Breakdown of spending for " + categories[e.getXIndex()])
+                .setIcon(R.drawable.ic_drawer_to_arrow)
+                .setPositiveButton("Close", null)
+                .setView(breakdownView);
+
+        dialog.show();
+    }
+
     public void setUpChartOverview() {
         chart = (PieChart) getView().findViewById(R.id.chart);
         chart.setBackgroundColor(Color.TRANSPARENT);
@@ -106,7 +191,9 @@ public class MonthlyViewFragment extends Fragment {
                     return;
 
                 Toast.makeText(getActivity(),
-                        xData[e.getXIndex()] + " = " + e.getVal() + "%", Toast.LENGTH_SHORT).show();
+                        categories[e.getXIndex()] + " = " + e.getVal() + "%", Toast.LENGTH_SHORT).show();
+
+                showPopUpBreakDownDialog(e);
             }
 
             @Override
