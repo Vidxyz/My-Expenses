@@ -26,6 +26,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -107,7 +108,7 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
             }
         });
 
-        ImageView editButton = (ImageView) view.findViewById(R.id.listEditButton);
+        final ImageView editButton = (ImageView) view.findViewById(R.id.listEditButton);
         editButton.setClickable(true);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,8 +123,45 @@ public class BudgetListAdapter extends ArraySwipeAdapter {
                                 ParseQuery<ParseObject> query = new ParseQuery<>("Budgets");
                                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                                 query.whereEqualTo("month", budgets.get(position).getMonth());
-                                //....
-                                //...work more on this
+                                query.findInBackground(new FindCallback<ParseObject>() {
+                                    @Override
+                                    public void done(List<ParseObject> objects, ParseException e) {
+                                        if (e == null) {
+                                            if (objects.size() == 0) { //No budget exists for this month
+                                                ParseObject newObject = new ParseObject("Budgets");
+                                                newObject.put("username", ParseUser.getCurrentUser().getUsername());
+                                                newObject.put("month", budgets.get(position).getMonth());
+                                                newObject.put("amount", Float.parseFloat(editText.getText().toString()));
+                                                newObject.saveInBackground(new SaveCallback() {
+                                                    @Override
+                                                    public void done(ParseException e) {
+                                                        if (e != null) {
+                                                            e.printStackTrace();
+                                                        } else {
+                                                            //Show out the toast and perform a fragment transaction
+                                                            Toast.makeText(getContext(), "Budget saved successfully!", Toast.LENGTH_LONG).show();
+                                                        }
+                                                    }
+                                                });
+                                            } else {
+                                                //This means the object exists, and a budget for this month already exists
+                                                Log.i("applog", "QUERY EXISTS BUT CANT DO SHIT ALL");
+                                                for (ParseObject object : objects) {
+                                                    object.put("amount", Float.parseFloat(editText.getText().toString()));
+                                                    object.saveInBackground(new SaveCallback() {
+                                                        @Override
+                                                        public void done(ParseException e) {
+                                                            Toast.makeText(getContext(), "Budget updated successfully!", Toast.LENGTH_LONG).show();
+                                                        }
+                                                    });
+                                                }
+                                            }
+                                        } else {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
+
                                 budgets.get(position).setAmount(editText.getText().toString());
                                 notifyDataSetChanged();
                             }
