@@ -3,9 +3,10 @@
     android:orientation="vertical" android:layout_width="match_parent" android:id="@id/relativeLayout"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="HELLO "/>
-
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:id="@+id/breakdownList"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

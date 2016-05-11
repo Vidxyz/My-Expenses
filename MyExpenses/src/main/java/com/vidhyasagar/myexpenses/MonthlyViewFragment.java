@@ -126,7 +126,21 @@ public class MonthlyViewFragment extends Fragment {
 
     public void showPopUpBreakDownDialog(final Entry e) {
         initializeMonths();
-        ListView breakdownListView = (ListView) getActivity().findViewById(R.id.breakdownList);
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View breakdownView = inflater.inflate(R.layout.layout_breakdown_dialog, null);
+        //Show a dialog box here which gives you a breakdown of all spending
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext())
+                .setTitle("Breakdown of spending for " + categories[e.getXIndex()])
+                .setIcon(R.drawable.ic_drawer_to_arrow)
+                .setPositiveButton("Close", null)
+                .setView(breakdownView);
+
+
+
+        final ListView breakdownListView = (ListView) breakdownView.findViewById(R.id.breakdownList);
+        if(breakdownListView == null) {
+            Log.i("applog", "listview is null");
+        }
         //Expans on this
         final ArrayList<DialogListItem> individualSpendings = new ArrayList<>();
         final SimpleDateFormat df = new SimpleDateFormat("dd/MMM/yyyy");
@@ -146,6 +160,7 @@ public class MonthlyViewFragment extends Fragment {
             tempMonth = months.get(monthHash.get(theMonth) - 5);
         }
         query.orderByAscending("month");
+        query.whereEqualTo("category", categories[e.getXIndex()]);
         final String finalTempMonth = tempMonth;
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -181,9 +196,12 @@ public class MonthlyViewFragment extends Fragment {
                         monthlySpendings.put(newMonth, monthAmount);
                         Log.i("applog", "Hashmap is " + monthlySpendings.toString());
                         Log.i("applog", "Arraylist is  " + individualSpendings.toString());
+
                         //Values now ready for Line Graph
                         //ArrayList of DialogListItems now ready for being put into the main list
-
+                        DialogListAdapter breakdownAdapter = new DialogListAdapter(getContext(), R.layout.layout_list_dialog, individualSpendings);
+                        breakdownListView.setAdapter(breakdownAdapter);
+                        //CURRENT LOCATION
                     }
                 }
                 else {
@@ -193,15 +211,7 @@ public class MonthlyViewFragment extends Fragment {
         });
 
 
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View breakdownView = inflater.inflate(R.layout.layout_breakdown_dialog, null);
-        //Show a dialog box here which gives you a breakdown of all spending
-        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext())
-                .setTitle("Breakdown of spending for " + categories[e.getXIndex()])
-                .setIcon(R.drawable.ic_drawer_to_arrow)
-                .setPositiveButton("Close", null)
-                .setView(breakdownView);
-
+        //FINALLY SHOW THE DIALOG
         dialog.show();
     }
 
