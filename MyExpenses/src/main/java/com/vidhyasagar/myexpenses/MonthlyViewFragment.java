@@ -4,6 +4,7 @@ package com.vidhyasagar.myexpenses;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -55,7 +56,7 @@ public class MonthlyViewFragment extends Fragment {
     private ArrayList<String> months ;
     private HashMap<String, Integer> monthHash;
     private HashMap<String, Float> monthlySpendings;
-
+    SharedPreferences sharedPreferences;
 
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -103,6 +104,8 @@ public class MonthlyViewFragment extends Fragment {
 
     public void addToDiary(View v) {
         fragmentTransaction = fragmentManager.beginTransaction();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        sharedPreferences.edit().putString("theDate", df.format(c.getTime())).apply();
         fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                 android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         fragmentTransaction.replace(R.id.containerView,new DiaryFragment()).addToBackStack("monthly").commit();
@@ -462,6 +465,7 @@ public class MonthlyViewFragment extends Fragment {
                 addToDiary(v);
             }
         });
+        sharedPreferences = getActivity().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
         return x;
     }
 

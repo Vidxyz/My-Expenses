@@ -47,6 +47,7 @@ public class ExpenseFragment extends Fragment {
 
     Calendar c;
     TextView todaysDate;
+    Date theDateToday;
     Button cancelButton;
     Button saveButton;
     Spinner categorySpinner;
@@ -56,6 +57,8 @@ public class ExpenseFragment extends Fragment {
     boolean hasArguments = false;
     SharedPreferences sharedPreferences;
 
+
+
     String expAmount;
 
     public void disableKeyboard(View view) {
@@ -64,18 +67,31 @@ public class ExpenseFragment extends Fragment {
     }
 
     public void previousDate(View view) {
-        c.setTime(c.getTime());
-        c.add(Calendar.DATE, -1);
+        Log.i("applog", "previosdate executed");
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        try {
+            theDateToday = df.parse(todaysDate.getText().toString());
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        c.setTime(theDateToday);
+        c.add(Calendar.DATE, -1);
         String formattedDate = df.format(c.getTime());
+        Log.i("applog", "FORMATTED DATE IS " + formattedDate);
         todaysDate.setText(formattedDate);
 
     }
 
     public void nextDate(View view) {
-        c.setTime(c.getTime());
-        c.add(Calendar.DATE, 1);
+        Log.i("applog", "nextdate executed");
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        try {
+            theDateToday = df.parse(todaysDate.getText().toString());
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        c.setTime(theDateToday);
+        c.add(Calendar.DATE, 1);
         String formattedDate = df.format(c.getTime());
         todaysDate.setText(formattedDate);
     }
@@ -112,7 +128,7 @@ public class ExpenseFragment extends Fragment {
         c = Calendar.getInstance();
         sharedPreferences = getActivity().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
         String eLocation = sharedPreferences.getString("location", "");
-        String theDate = sharedPreferences.getString("theDate", "err:noDateFound");
+        final String theDate = sharedPreferences.getString("theDate", "err:noDateFound");
         sharedPreferences.edit().remove("theDate").commit();
 
         if(eLocation.equals("")) {
@@ -191,6 +207,13 @@ public class ExpenseFragment extends Fragment {
 //        todaysDate.setText(sharedPreferences.getString("theDate", ""));
 //        sharedPreferences.edit().remove("theDate").commit();
         todaysDate.setText(theDate);
+        SimpleDateFormat df2 = new SimpleDateFormat("dd-MMM-yyyy");
+        try {
+            theDateToday = df2.parse(todaysDate.getText().toString());
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+
 
         ImageView previousButton = (ImageView) x.findViewById(R.id.previousButton);
         ImageView nextButton = (ImageView) x.findViewById(R.id.nextButton);
@@ -243,7 +266,7 @@ public class ExpenseFragment extends Fragment {
 //
                     ParseObject newExpense = new ParseObject("Expenses");
                     newExpense.put("amount", Float.parseFloat(expAmount));
-                    newExpense.put("time", c.getTime());
+                    newExpense.put("time", theDateToday);
                     newExpense.put("month", monthFormat.format(c.getTime()));
                     newExpense.put("category", categorySpinner.getSelectedItem().toString());
                     newExpense.put("method", methodSpinner.getSelectedItem().toString());
@@ -267,9 +290,14 @@ public class ExpenseFragment extends Fragment {
                     Log.i("applog", "Location : " + sharedPreferences.getString("location", ""));
                     Log.i("applog", "Type : " + sharedPreferences.getString("category", ""));
                     Log.i("applog", "Method : " + sharedPreferences.getString("method", ""));
-                    Log.i("applog", "Time : " + sharedPreferences.getString("time", "noStringFoundSucka"));
 
-                    final SimpleDateFormat tempDf = new SimpleDateFormat("dd-MMM-yyyy");
+                    SimpleDateFormat dfx = new SimpleDateFormat("dd-MMM-yyyy");
+                    try {
+                        theDateToday = dfx.parse(todaysDate.getText().toString());
+                    } catch (java.text.ParseException e) {
+                        e.printStackTrace();
+                    }
+
                     ParseQuery<ParseObject> pQuery = new ParseQuery<ParseObject>("Expenses");
                     pQuery.whereEqualTo("location", sharedPreferences.getString("location", ""));
                     pQuery.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
@@ -290,6 +318,7 @@ public class ExpenseFragment extends Fragment {
                                         object.put("category",categorySpinner.getSelectedItem().toString());
                                         object.put("method",methodSpinner.getSelectedItem().toString());
                                         object.put("amount",Float.parseFloat(expAmount));
+                                        object.put("time", theDateToday);
                                         object.saveInBackground(new SaveCallback() {
                                             @Override
                                             public void done(ParseException e) {

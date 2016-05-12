@@ -15,13 +15,14 @@ public class ExpenseListItem {
     public float expenseAmount;
     public Date expenseDate;
 
-    public ExpenseListItem(float expenseAmount, String expenseLocation, String expenseTime, String expenseIcon, String expenseType) {
+    public ExpenseListItem(float expenseAmount, String expenseLocation, String expenseTime, String expenseIcon, String expenseType, Date expenseDate) {
         super();
         this.expenseAmount = expenseAmount;
         this.expenseLocation = expenseLocation;
         this.expenseTime = expenseTime;
         this.expenseIcon = expenseIcon;
         this.expenseType = expenseType;
+        this.expenseDate = expenseDate;
     }
 
 }

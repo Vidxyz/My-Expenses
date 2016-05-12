@@ -99,7 +99,7 @@ public class DailyViewFragment extends Fragment {
                         if (date.equals(dateToCompare)) {
                             ExpenseListItem temp = new ExpenseListItem(Float.parseFloat(object.getNumber("amount").toString()),
                                     object.getString("location"), timeFormat.format(object.getDate("time")),
-                                    object.getString("category"), object.getString("method"));
+                                    object.getString("category"), object.getString("method"), object.getDate("time"));
                             expenses.add(temp);
                         }
                     }
@@ -126,20 +126,26 @@ public class DailyViewFragment extends Fragment {
 
     public void previousDate(View view) {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        Date formattedDate = null;
+//        todaysDate = (TextView) getActivity().findViewById(R.id.todaysDate);
         if(!hasArguments) {
-            c.setTime(c.getTime());
+            try {
+                formattedDate = df.parse(todaysDate.getText().toString());
+            } catch (java.text.ParseException e) {
+                e.printStackTrace();
+            }
+            c.setTime(formattedDate);
             c.add(Calendar.DATE, -1);
-            String formattedDate = df.format(c.getTime());
-            todaysDate.setText(formattedDate);
-            setUpExpensesListView(formattedDate);
+            todaysDate.setText(df.format(c.getTime()));
+            setUpExpensesListView(df.format(c.getTime()));
         }
         else {
             try {
                 c.setTime(df.parse(eDate));
                 c.add(Calendar.DATE, -1);
-                String formattedDate = df.format(c.getTime());
-                todaysDate.setText(formattedDate);
-                setUpExpensesListView(formattedDate);
+                String formattedDate2 = df.format(c.getTime());
+                todaysDate.setText(formattedDate2);
+                setUpExpensesListView(formattedDate2);
                 hasArguments = false;
             } catch (java.text.ParseException e) {
                 e.printStackTrace();
@@ -150,24 +156,30 @@ public class DailyViewFragment extends Fragment {
 
     public void nextDate(View view) {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        Date formattedDate = null;
+//        todaysDate = (TextView) getActivity().findViewById(R.id.todaysDate);
         if(!hasArguments) {
-            c.setTime(c.getTime());
+            try {
+                formattedDate = df.parse(todaysDate.getText().toString());
+            } catch (java.text.ParseException e) {
+                e.printStackTrace();
+            }
+            c.setTime(formattedDate);
             c.add(Calendar.DATE, 1);
-            String formattedDate = df.format(c.getTime());
-            todaysDate.setText(formattedDate);
-            setUpExpensesListView(formattedDate);
+            todaysDate.setText(df.format(c.getTime()));
+            setUpExpensesListView(df.format(c.getTime()));
         }
         else {
             try {
                 c.setTime(df.parse(eDate));
                 c.add(Calendar.DATE, 1);
-                String formattedDate = df.format(c.getTime());
-                todaysDate.setText(formattedDate);
-                setUpExpensesListView(formattedDate);
+                String formattedDate2 = df.format(c.getTime());
+                todaysDate.setText(formattedDate2);
+                setUpExpensesListView(formattedDate2);
                 hasArguments = false;
             } catch (java.text.ParseException e) {
-                e.printStackTrace();
                 Log.i("applog", "exception occured");
+                e.printStackTrace();
             }
         }
     }
@@ -326,7 +338,8 @@ public class DailyViewFragment extends Fragment {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         if(!hasArguments) {
             String formattedDate = df.format(c.getTime());
-            setUpExpensesListView(formattedDate);
+            setUpExpensesListView(todaysDate.getText().toString());
+//            setUpExpensesListView(formattedDate);
         }
         else {
             setUpExpensesListView(eDate);

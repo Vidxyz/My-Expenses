@@ -56,7 +56,7 @@ public class ExpenseListAdapter extends ArraySwipeAdapter {
                 sharedPreferences.edit().putString("category", items.get(position).expenseIcon).apply();
                 sharedPreferences.edit().putString("method", items.get(position).expenseType).apply();
                 sharedPreferences.edit().putFloat("amount", items.get(position).expenseAmount).apply();
-                sharedPreferences.edit().putString("theDate", df.format(items.get(position).expenseTime)).apply();
+                sharedPreferences.edit().putString("theDate", df.format(items.get(position).expenseDate)).apply();
 
                 fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                         android.R.anim.slide_in_left, android.R.anim.slide_out_right);
